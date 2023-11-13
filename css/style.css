@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@500&display=swap');
+/* || RESET */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* || VARIABLES */
+
+:root {
+  --BACKGROUND-COLOR-BASE: lightblue;
+  --FONT-FAMILY-BASE: "Poppins", system-ui, sans-serif;
+  --FONT-FAMILY-HEADINGS: "Nunito", system-ui, sans-serif;
+  --FONT-SIZE-BASE: clamp(1rem, 2.2vh ,1.5rem);
+
+  --SIZE-CELLS-INTERVAL-BASE: 10px;
+  --SIZE-CONTAINER-WIDTH-RESUME-FOTO: 300px;
+  --SIZE-HEADER-HEIGHT: 50px;
+  --SIZE-SOCIALS-HEIGHT: 20px;
+  --SIZE-MAX-WIDTH-XL: 1440px;
+  
+
+  --BORDER-TEST: 1px solid red;
+}
+
+/* || UTILITY CLASSES */
+
+/* || GENERAL STYLES */
+html {
+  font-family: var(--FONT-FAMILY-BASE);
+  font-size: var(--FONT-FAMILY-BASE);
+  color: red;
+  background-color: black;
+}
+
+body {
+  background-color: var(--BACKGROUND-COLOR-BASE);
+  min-height: 100vh;
+  max-width: var(--SIZE-MAX-WIDTH-XL);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    [resume-photo-start] var(--SIZE-CONTAINER-WIDTH-RESUME-FOTO)
+    var(--SIZE-CELLS-INTERVAL-BASE)
+    [main-col-start] auto
+    var(--SIZE-CELLS-INTERVAL-BASE)
+    [menu-start] 50px
+    [menu-end];
+  grid-template-rows:
+    [header-start] var(--SIZE-HEADER-HEIGHT)
+    var(--SIZE-CELLS-INTERVAL-BASE)
+    [main-row-start] auto
+    var(--SIZE-CELLS-INTERVAL-BASE)
+    [footer-start] 20px
+    [footer-end];
+}
+
+/* || HEADER */
+.header {
+  border: var(--BORDER-TEST);
+
+  grid-column-start: main-col-start;
+  grid-column-end: menu-end;
+  grid-row-start: header-start;
+}
+
+/* || RESUME */
+.resume {
+  border: var(--BORDER-TEST);
+  background-color: green;
+
+  grid-column-start: resume-photo-start;
+  grid-row-start: header-start;
+  grid-row-end: footer-end;
+}
+
+
+/* || FOOTER */
+.footer {
+  color: black;
+  background-color: brown;
+
+  grid-column-start: main-col-start;
+  grid-column-end: menu-end;
+  grid-row-start: footer-start;
+}
+
+/* || MAIN */
+.main {
+  grid-column: main-col-start;
+  grid-row: main-row-start;
+}
