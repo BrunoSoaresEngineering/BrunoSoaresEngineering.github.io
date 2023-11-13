@@ -12,10 +12,12 @@
 /* || VARIABLES */
 
 :root {
-  --BACKGROUND-COLOR-BASE: lightblue;
+  --BACKGROUND-COLOR-BASE: #FFF;
   --FONT-FAMILY-BASE: "Poppins", system-ui, sans-serif;
   --FONT-FAMILY-HEADINGS: "Nunito", system-ui, sans-serif;
   --FONT-SIZE-BASE: clamp(1rem, 2.2vh ,1.5rem);
+
+  --MARGIN-TB-BASE: clamp(1em, 2.5vh, 1.5em);
 
   --SIZE-CELLS-INTERVAL-BASE: 10px;
   --SIZE-CONTAINER-WIDTH-RESUME-FOTO: 300px;
@@ -24,24 +26,28 @@
   --SIZE-MAX-WIDTH-XL: 1440px;
   
 
+
   --BORDER-TEST: 1px solid red;
 }
 
 /* || UTILITY CLASSES */
+.center {
+  text-align: center;
+}
 
 /* || GENERAL STYLES */
 html {
   font-family: var(--FONT-FAMILY-BASE);
   font-size: var(--FONT-FAMILY-BASE);
-  color: red;
+  color: #000;
   background-color: black;
 }
 
 body {
   background-color: var(--BACKGROUND-COLOR-BASE);
-  min-height: 100vh;
+  min-height: calc(100vh - var(--MARGIN-TB-BASE) * 2);
   max-width: var(--SIZE-MAX-WIDTH-XL);
-  margin: 0 auto;
+  margin: var(--MARGIN-TB-BASE) auto;
   display: grid;
   grid-template-columns:
     [resume-photo-start] var(--SIZE-CONTAINER-WIDTH-RESUME-FOTO)
@@ -71,11 +77,23 @@ body {
 /* || RESUME */
 .resume {
   border: var(--BORDER-TEST);
-  background-color: green;
+  background-color: lightgoldenrodyellow;
 
   grid-column-start: resume-photo-start;
   grid-row-start: header-start;
   grid-row-end: footer-end;
+
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 300px 1fr 1fr 1fr 50px;
+}
+
+.resume__photo {
+  margin: var(--MARGIN-TB-BASE);
+}
+
+.resume__photo img {
+  border-radius: 50%;
 }
 
 
