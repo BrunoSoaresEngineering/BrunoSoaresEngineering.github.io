@@ -198,19 +198,17 @@ p {
 .project {
   position: relative;
   list-style-type: none;
-  width: var(--TIMELINE-WIDTH);
-  background-color: var(--TIMELINE-BACKGROUND-COLOR);
-  z-index: 1;
-
-
+  border-left: var(--TIMELINE-WIDTH) solid var(--TIMELINE-BACKGROUND-COLOR);
+  width: 100%;
+  background-color: transparent;
 }
 
 .project::before {
   content: '';
   position: absolute;
-  left: 50%;
+  left: calc(-0.5 * var(--TIMELINE-WIDTH));
   transform: translateX(-50%);
-  top:calc(var(--CARD-ARROW-HEIGHT) / 2);
+  /* top:calc(var(--CARD-ARROW-HEIGHT) / 2); */
   height: var(--TIMELINE-MARKER-SIZE);
   width: var(--TIMELINE-MARKER-SIZE);
   border: var(--TIMELINE-BORDER);
@@ -221,25 +219,19 @@ p {
 }
 
 .project__card {
-  width: 500px;
+  width: 100%;
   background-color: var(--CARD-BACKGROUND-COLOR-BASE);
-  /* padding: var(--CARD-PADDING);
-  margin-bottom: var(--CARD-MARGIN-BOTTOM-BASE);*/
   margin-left: var(--CARD-MARGIN-LEFT-BASE);
   position: relative;
-  /*right: 0px;
-  left: 0px; */
 }
 
 .project__card::before {
   content: "";
   position: absolute;
   top: 0;
-  /* left: calc(-1 * var(--CARD-ARROW-WIDTH)); */
-  transform: translateX(-95%);
-  width: 0;
-  height: 0;
+  transform: translate(-90%, 10%);
   border-style: solid;
-  border-width: var(--CARD-ARROW-HEIGHT) var(--CARD-ARROW-WIDTH) var(--CARD-ARROW-HEIGHT) 0;
+  border-width: calc(var(--CARD-ARROW-WIDTH) * 0.25 ) var(--CARD-ARROW-WIDTH) calc(var(--CARD-ARROW-WIDTH) * 0.75 ) 0;
   border-color: transparent var(--CARD-BACKGROUND-COLOR-BASE) transparent transparent;
+  z-index: 0;
 }
