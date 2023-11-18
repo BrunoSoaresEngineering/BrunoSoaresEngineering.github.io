@@ -9,6 +9,18 @@
   box-sizing: border-box;
 }
 
+img {
+  display: block;                 /*removes space below images*/
+  max-width: 100%;                /*responsive image*/
+  height: auto;                   /*responsive image*/
+}
+
+input,
+button,
+textarea {
+  font: inherit;                  /*They don't inherit font properties if we don't do this!*/
+}
+
 /* || VARIABLES */
 
 :root {
@@ -17,9 +29,10 @@
   --FONT-FAMILY-HEADINGS: "Nunito", system-ui, sans-serif;
   --FONT-SIZE-BASE: clamp(1rem, 2.2vh ,1.5rem);
   --FONT-COLOR-BASE: #000;
-  --LINK-COLOR-BASE: blue;
-  --LINK-COLOR-HOVER: cornflowerblue;
-  --LINK-COLOR-ACTIVE: lightblue;
+  --LINK-COLOR-BASE: #000;
+  --LINK-COLOR-HOVER: blue;
+  --LINK-COLOR-ACTIVE: aqua;
+  --BORDER-RADIUS-BASE: 15px;
 
   --MARGIN-TB-BASE: clamp(1em, 2.5vh, 1.5em);
 
@@ -38,12 +51,16 @@
   --CARD-MARGIN-LEFT-BASE: 3em;
   --CARD-PADDING: 2em;
   --CARD-ARROW-HEIGHT: calc(var(--CARD-ARROW-WIDTH) / 2);
+  --CARD-ARROW-WIDTH: calc(var(--CARD-MARGIN-LEFT-BASE) - var(--TIMELINE-MARKER-SIZE) / 2);
+  --CARD-BOX-FONT-COLOR: grey;
+  --CARD-BOX-BACKGROUND-COLOR: orange;
+  --CARD-DATES-FONT-COLOR: grey;
+  --CARD-DATES-BACKGROUND-COLOR: midnightblue;
   --TIMELINE-WIDTH: 6px;
   --TIMELINE-BACKGROUND-COLOR: #000;
   --TIMELINE-MARKER-SIZE: 1.5em;
   --TIMELINE-MARKER-BACKGROUND-COLOR: #555;
   --TIMELINE-BORDER: 3px solid blue;
-  --CARD-ARROW-WIDTH: calc(var(--CARD-MARGIN-LEFT-BASE) - var(--TIMELINE-MARKER-SIZE) / 2);
 
   
 
@@ -57,7 +74,12 @@
 }
 
 .nowrap {
-  text-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.offscreen {
+  position: absolute;
+  left: -1000000px;
 }
 
 /* || GENERAL STYLES */
@@ -104,10 +126,33 @@ h2,
 h3 {
   font-family: var(--FONT-FAMILY-HEADINGS);
   letter-spacing: 0.05em;
+  padding-bottom: var(--PADDING-TB-SECTION);
 }
 
 p {
   line-height: 1.5;
+  letter-spacing: 0.05em;
+  word-spacing: 0.1em;
+  white-space: initial;
+}
+
+a:any-link {
+  color: var(--LINK-COLOR-BASE);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--LINK-COLOR-HOVER);
+  text-decoration: underline;
+}
+
+a:active {
+  color: var(--LINK-COLOR-ACTIVE);
+}
+
+button {
+  cursor: pointer;
 }
 
 /* || HEADER */
@@ -182,7 +227,7 @@ p {
 }
 
 .projects__group {
-  padding-top: 0;
+  padding: var(--PADDING-TB-SECTION) var(--PADDING-SIDE-BASE);
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -208,7 +253,6 @@ p {
   position: absolute;
   left: calc(-0.5 * var(--TIMELINE-WIDTH));
   transform: translateX(-50%);
-  /* top:calc(var(--CARD-ARROW-HEIGHT) / 2); */
   height: var(--TIMELINE-MARKER-SIZE);
   width: var(--TIMELINE-MARKER-SIZE);
   border: var(--TIMELINE-BORDER);
@@ -222,16 +266,75 @@ p {
   width: 100%;
   background-color: var(--CARD-BACKGROUND-COLOR-BASE);
   margin-left: var(--CARD-MARGIN-LEFT-BASE);
+  margin-bottom: var(--CARD-MARGIN-BOTTOM-BASE);
   position: relative;
+  padding: var(--CARD-PADDING);
+  border-radius: var(--BORDER-RADIUS-BASE);
 }
 
 .project__card::before {
   content: "";
   position: absolute;
   top: 0;
-  transform: translate(-90%, 10%);
+  transform: translate(calc(-90% - var(--CARD-PADDING)), 10%);
   border-style: solid;
   border-width: calc(var(--CARD-ARROW-WIDTH) * 0.25 ) var(--CARD-ARROW-WIDTH) calc(var(--CARD-ARROW-WIDTH) * 0.75 ) 0;
   border-color: transparent var(--CARD-BACKGROUND-COLOR-BASE) transparent transparent;
   z-index: 0;
+  padding: 1px 0;
+}
+
+.project__card__header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: var(--CARD-MARGIN-TB-BASE);
+}
+
+.project__card__header p {
+  background-color: var(--CARD-DATES-BACKGROUND-COLOR);
+  color: var(--CARD-DATES-FONT-COLOR);
+  border-radius: var(--BORDER-RADIUS-BASE);
+  align-self: flex-start;
+  padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
+  font-weight: 700;
+}
+
+.project__card__button {
+  border-radius: 0;
+  background-color: transparent;
+  border: none;
+  display: flex;
+}
+
+.project__card__button__logo img{
+  width: 40px;
+  height: 40px;
+  margin-right: 1em;
+}
+
+.project__card__button__text {
+  align-self: center;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.project__technologies {
+  margin-top: var(--CARD-MARGIN-TB-BASE);
+}
+
+.project__technologies__ul {
+  padding-top: var(--PADDING-TB-SECTION);
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  row-gap: 1em;
+  column-gap: 5%;
+}
+
+.project__technologies__ul li {
+  border-radius: var(--BORDER-RADIUS-BASE);
+  background-color: var(--CARD-BOX-BACKGROUND-COLOR);
+  padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
 }
