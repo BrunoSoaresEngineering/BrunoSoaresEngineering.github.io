@@ -44,9 +44,11 @@ textarea {
   --SIZE-HEADER-HEIGHT: 100px;
   --SIZE-SOCIALS-HEIGHT: 20px;
   --SIZE-MAX-WIDTH-XL: 1440px;
+  --HEIGHT-BODY: calc(100vh - var(--PADDING-TB-BASE) * 2);
   --PADDING-SIDE-BASE: 2.5%;
   --PADDING-TB-BASE: 0.25em;
   --PADDING-TB-SECTION: 1em;
+  --PADDING-TB-BODY: 15px;
   --CARD-BACKGROUND-COLOR-BASE: rgb(128, 216, 207);
   --CARD-MARGIN-TB-BASE: 2em;
   --CARD-MARGIN-LR-BASE: 2.5%;
@@ -63,7 +65,7 @@ textarea {
   --TIMELINE-BACKGROUND-COLOR: #000;
   --TIMELINE-MARKER-SIZE: 1.5em;
   --TIMELINE-MARKER-BACKGROUND-COLOR: #555;
-  --TIMELINE-BORDER: 3px solid blue;
+  --TIMELINE-BORDER: 3px solid papayawhip;
 
   
 
@@ -89,6 +91,8 @@ textarea {
 html {
   font-family: var(--FONT-FAMILY-BASE);
   font-size: var(--FONT-FAMILY-BASE);
+  height: 100%;
+  padding: var(--PADDING-TB-BODY) 0;
 
   background-color: black;
 }
@@ -97,17 +101,15 @@ body {
   background-color: var(--BACKGROUND-COLOR-BASE);
   background-image: linear-gradient(to bottom, var(--BACKGROUND-COLOR-GRADIENT1), var(--BACKGROUND-COLOR-GRADIENT2));
   color: var(--FONT-COLOR-BASE);
-  min-height: calc(100vh - var(--MARGIN-TB-BASE) * 2);
+  height: 100%;
   max-width: var(--SIZE-MAX-WIDTH-XL);
-  margin: var(--MARGIN-TB-BASE) auto;
+  margin: 0 auto;
   display: grid;
   grid-template-columns:
     [resume-photo-start] var(--SIZE-CONTAINER-WIDTH-RESUME-FOTO)
     [resume-photo-end] var(--SIZE-CELLS-INTERVAL-BASE)
-    [main-col-start] auto
-    var(--SIZE-CELLS-INTERVAL-BASE)
-    [menu-start] 50px
-    [menu-end];
+    [main-col-start] 100fr
+    [main-col-end];
   grid-template-rows:
     [header-start] var(--SIZE-HEADER-HEIGHT)
     var(--SIZE-CELLS-INTERVAL-BASE)
@@ -174,7 +176,7 @@ button {
 /* || HEADER */
 .header {
   grid-column-start: resume-photo-end;
-  grid-column-end: menu-end;
+  grid-column-end: main-col-end;
   grid-row-start: header-start;
   background-color: var(--BACKGROUND-COLOR-BASE);
   background-image: url('../img/softwareEngineering.jpg');
@@ -191,8 +193,12 @@ button {
 
 /* || RESUME */
 .resume {
-  border: var(--BORDER-TEST);
+  border: none;
   background-color: lightgoldenrodyellow;
+  /* height: var(--HEIGHT-BODY); */
+
+  position: sticky;
+  top: 0;
 
   grid-column-start: resume-photo-start;
   grid-row-start: header-start;
@@ -230,12 +236,15 @@ button {
 .main {
   grid-column: main-col-start;
   grid-row: main-row-start;
+  overflow: auto;
+  overflow-x: hidden;
+  padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
 }
 
 /* || SOFTWARE ENGINEERING */
 .skills__ul {
   list-style-type: none;
-  padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
+  padding: var(--PADDING-TB-BASE) 0;
   
   display: flex;
   justify-content: space-between;
