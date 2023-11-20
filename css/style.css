@@ -25,10 +25,13 @@ textarea {
 
 :root {
   --BACKGROUND-COLOR-BASE: #FFF;
+  --BACKGROUND-COLOR-GRADIENT1: aliceblue;
+  --BACKGROUND-COLOR-GRADIENT2: papayawhip;
   --FONT-FAMILY-BASE: "Poppins", system-ui, sans-serif;
   --FONT-FAMILY-HEADINGS: "Nunito", system-ui, sans-serif;
   --FONT-SIZE-BASE: clamp(1rem, 2.2vh ,1.5rem);
   --FONT-COLOR-BASE: #000;
+  --FONT-COLOR-HEADINGS: midnightblue;
   --LINK-COLOR-BASE: #000;
   --LINK-COLOR-HOVER: blue;
   --LINK-COLOR-ACTIVE: aqua;
@@ -38,7 +41,7 @@ textarea {
 
   --SIZE-CELLS-INTERVAL-BASE: 10px;
   --SIZE-CONTAINER-WIDTH-RESUME-FOTO: 300px;
-  --SIZE-HEADER-HEIGHT: 50px;
+  --SIZE-HEADER-HEIGHT: 100px;
   --SIZE-SOCIALS-HEIGHT: 20px;
   --SIZE-MAX-WIDTH-XL: 1440px;
   --PADDING-SIDE-BASE: 2.5%;
@@ -92,6 +95,7 @@ html {
 
 body {
   background-color: var(--BACKGROUND-COLOR-BASE);
+  background-image: linear-gradient(to bottom, var(--BACKGROUND-COLOR-GRADIENT1), var(--BACKGROUND-COLOR-GRADIENT2));
   color: var(--FONT-COLOR-BASE);
   min-height: calc(100vh - var(--MARGIN-TB-BASE) * 2);
   max-width: var(--SIZE-MAX-WIDTH-XL);
@@ -99,7 +103,7 @@ body {
   display: grid;
   grid-template-columns:
     [resume-photo-start] var(--SIZE-CONTAINER-WIDTH-RESUME-FOTO)
-    var(--SIZE-CELLS-INTERVAL-BASE)
+    [resume-photo-end] var(--SIZE-CELLS-INTERVAL-BASE)
     [main-col-start] auto
     var(--SIZE-CELLS-INTERVAL-BASE)
     [menu-start] 50px
@@ -127,11 +131,23 @@ h3 {
   font-family: var(--FONT-FAMILY-HEADINGS);
   letter-spacing: 0.05em;
   padding-bottom: var(--PADDING-TB-SECTION);
+  color: var(--FONT-COLOR-HEADINGS);
+}
+
+h1 {
+  padding: 0 0 0 var(--PADDING-SIDE-BASE);
+  font-size: clamp(2rem, 5vh, 2.5rem);
+  color: aliceblue;
+  text-shadow: 2px 2px 5px #000;
+  word-wrap: nowrap;
+  position: absolute;
+  top: calc(var(--SIZE-HEADER-HEIGHT) / 2);
+  transform: translateY(-50%);
 }
 
 p {
   line-height: 1.5;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   word-spacing: 0.1em;
   white-space: initial;
 }
@@ -157,11 +173,20 @@ button {
 
 /* || HEADER */
 .header {
-  border: var(--BORDER-TEST);
-
-  grid-column-start: main-col-start;
+  grid-column-start: resume-photo-end;
   grid-column-end: menu-end;
   grid-row-start: header-start;
+  background-color: var(--BACKGROUND-COLOR-BASE);
+  background-image: url('../img/softwareEngineering.jpg');
+  background-repeat: repeat;
+  height: var(--SIZE-HEADER-HEIGHT);
+  border-bottom: 2px solid #000;
+  position: relative;
+}
+
+.hero {
+  background-color: hsla(0, 0%, 0%, 0.616);
+  height: var(--SIZE-HEADER-HEIGHT);
 }
 
 /* || RESUME */
@@ -180,10 +205,14 @@ button {
 
 .resume__photo {
   margin: var(--MARGIN-TB-BASE);
+  
 }
 
 .resume__photo img {
   border-radius: 50%;
+  min-width: 100px;
+  border: 5px double grey;
+  margin: auto;
 }
 
 
@@ -203,10 +232,6 @@ button {
   grid-row: main-row-start;
 }
 
-.main__hero {
-  border: var(--BORDER-TEST);
-}
-
 /* || SOFTWARE ENGINEERING */
 .skills__ul {
   list-style-type: none;
@@ -218,8 +243,13 @@ button {
   gap: 1em 3em;
 }
 
-.skills__ul li {
-  
+.skills__li {
+  background-color: midnightblue;
+  color: aliceblue;
+  padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
+  text-align: center;
+  border-radius: var(--BORDER-RADIUS-BASE);
+  box-shadow: 0 0 15px black;
 }
 
 .projects {
@@ -232,13 +262,6 @@ button {
   justify-content: flex-start;
   flex-direction: column;
 }
-
-/* .projects__group::before {
-  content: '';
-  position: absolute;
-  top: var(--TIMELINE-TOP);
-  height: calc(100% - var(--TIMELINE-TOP));
-} */
 
 .project {
   position: relative;
@@ -298,6 +321,7 @@ button {
   align-self: flex-start;
   padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
   font-weight: 700;
+  box-shadow: 0 0 10px black;
 }
 
 .project__card__button {
@@ -337,4 +361,5 @@ button {
   border-radius: var(--BORDER-RADIUS-BASE);
   background-color: var(--CARD-BOX-BACKGROUND-COLOR);
   padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
+  box-shadow: 0 0 10px black;
 }
