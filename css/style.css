@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@500&display=swap');
+@import url('/fonts/fontawesome/css/fontawesome.min.css');
 /* || RESET */
 
 *,
@@ -25,6 +26,9 @@ textarea {
 
 :root {
   --BACKGROUND-COLOR-BASE: #FFF;
+  --BACKGROUND-COLOR-MENU-HOVER: dimgrey;
+  --BACKGROUND-COLOR-MENU-SELECTED: darkgrey;
+  --BACKGROUND-COLOR-MENU: azure;
   --BACKGROUND-COLOR-GRADIENT1: aliceblue;
   --BACKGROUND-COLOR-GRADIENT2: papayawhip;
   --FONT-FAMILY-BASE: "Poppins", system-ui, sans-serif;
@@ -36,6 +40,7 @@ textarea {
   --LINK-COLOR-HOVER: blue;
   --LINK-COLOR-ACTIVE: aqua;
   --BORDER-RADIUS-BASE: 15px;
+  --BORDER-COLOR-BASE: #000;
 
   --MARGIN-TB-BASE: clamp(1em, 2.5vh, 1.5em);
 
@@ -46,6 +51,7 @@ textarea {
   --SIZE-MAX-WIDTH-XL: 1440px;
   --HEIGHT-BODY: calc(100vh - var(--PADDING-TB-BASE) * 2);
   --PADDING-SIDE-BASE: 2.5%;
+  --PADDING-SIDE-NAV: 5%;
   --PADDING-TB-BASE: 0.25em;
   --PADDING-TB-SECTION: 1em;
   --PADDING-TB-BODY: 15px;
@@ -66,6 +72,8 @@ textarea {
   --TIMELINE-MARKER-SIZE: 1.5em;
   --TIMELINE-MARKER-BACKGROUND-COLOR: #555;
   --TIMELINE-BORDER: 3px solid papayawhip;
+  --BUTTON-COLOR: rgb(128, 216, 207);
+  --BUTTON-PADDING: 0.5em 4em;
 
   
 
@@ -87,6 +95,10 @@ textarea {
   left: -1000000px;
 }
 
+.menu_item_selected {
+  background-color: var(--BACKGROUND-COLOR-MENU-SELECTED);
+}
+
 /* || GENERAL STYLES */
 html {
   font-family: var(--FONT-FAMILY-BASE);
@@ -94,13 +106,15 @@ html {
   height: 100%;
   padding: var(--PADDING-TB-BODY) 0;
 
-  background-color: black;
+  background: rgb(250,240,230);
+  background: radial-gradient(circle, rgba(250,240,230,1) 44%, rgba(245,255,250,1) 83%); 
 }
 
 body {
   background-color: var(--BACKGROUND-COLOR-BASE);
   background-image: linear-gradient(to bottom, var(--BACKGROUND-COLOR-GRADIENT1), var(--BACKGROUND-COLOR-GRADIENT2));
   color: var(--FONT-COLOR-BASE);
+  box-shadow: 0 0 10px var(--BORDER-COLOR-BASE);
   height: 100%;
   max-width: var(--SIZE-MAX-WIDTH-XL);
   margin: 0 auto;
@@ -194,8 +208,6 @@ button {
 /* || RESUME */
 .resume {
   border: none;
-  background-color: lightgoldenrodyellow;
-  /* height: var(--HEIGHT-BODY); */
 
   position: sticky;
   top: 0;
@@ -206,12 +218,23 @@ button {
 
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 300px 1fr 1fr 1fr 50px;
+  grid-template-rows: 300px max-content auto auto 50px;
 }
 
 .resume__photo {
-  margin: var(--MARGIN-TB-BASE);
-  
+  margin: var(--MARGIN-TB-BASE) auto;
+}
+
+.resume__photo figcaption{
+  font-size: 1.3rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  padding-bottom: 0.5em;
+}
+
+.resume__photo p{
+  font-size: 1rem;
+  text-align: left;
 }
 
 .resume__photo img {
@@ -219,6 +242,69 @@ button {
   min-width: 100px;
   border: 5px double grey;
   margin: auto;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  padding: 0;
+}
+
+.socials__img {
+  width: 40px;
+  height: auto;
+}
+
+.resume__nav {
+  padding: var(--PADDING-TB-BASE) 0;
+  line-height: 2;
+  background-color: var(--BACKGROUND-COLOR-MENU);
+  text-transform: uppercase;
+
+}
+
+.resume__nav__ul {
+  letter-spacing: 0.03em;
+  list-style: none;
+}
+
+.resume__nav__ul a,
+.resume__nav__ul p {
+  display: block;
+  padding-left: var(--PADDING-SIDE-NAV);
+}
+
+.resume__nav__ul a:hover,
+.resume__nav__ul a:focus {
+  background-color: var(--BACKGROUND-COLOR-MENU-HOVER);
+  text-decoration: none;
+  color: var(--FONT-COLOR-BASE);
+}
+
+.resume__nav__ul a:active {
+  background-color: var(--BACKGROUND-COLOR-MENU-HOVER);
+  text-decoration: none;
+  color: var(--FONT-COLOR-BASE);
+}
+
+.resume__nav__portfolio {
+  padding: var(--PADDING-TB-BASE) 0;
+  list-style: none;
+}
+
+.resume__nav__portfolio a {
+  padding-left: calc(var(--PADDING-SIDE-NAV) * 2);
+}
+
+.cv {
+  padding: var(--BUTTON-PADDING);
+  margin: 0 auto;
+  background-color: var(--BUTTON-COLOR);
+}
+
+.hire {
 }
 
 
