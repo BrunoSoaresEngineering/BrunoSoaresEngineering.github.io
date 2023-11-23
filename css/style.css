@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@500&display=swap');
-@import url('/fonts/fontawesome/css/fontawesome.min.css');
+@import url('/fonts/fontawesome/css/all.css');
 /* || RESET */
 
 *,
@@ -73,7 +73,7 @@ textarea {
   --TIMELINE-MARKER-BACKGROUND-COLOR: #555;
   --TIMELINE-BORDER: 3px solid papayawhip;
   --BUTTON-COLOR: rgb(128, 216, 207);
-  --BUTTON-PADDING: 0.5em 4em;
+  --BUTTON-PADDING: 0.5em 1em;
 
   
 
@@ -215,10 +215,6 @@ button {
   grid-column-start: resume-photo-start;
   grid-row-start: header-start;
   grid-row-end: footer-end;
-
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 300px max-content auto auto 50px;
 }
 
 .resume__photo {
@@ -234,7 +230,7 @@ button {
 
 .resume__photo p{
   font-size: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .resume__photo img {
@@ -255,6 +251,26 @@ button {
 .socials__img {
   width: 40px;
   height: auto;
+}
+
+.resume__button {
+  padding: var(--BUTTON-PADDING);
+  margin: var(--MARGIN-TB-BASE) auto;
+  background-color: var(--BUTTON-COLOR);
+  border-radius: 50px;
+  text-align: left;
+  width: fit-content;
+}
+
+.resume__button i {
+  background-color: var(--BACKGROUND-COLOR-GRADIENT1);
+  margin-left: 15px;
+  border-radius: 50px;
+  height: 27px;
+  width: 27px;
+  text-align: center;
+  float: right;
+  line-height: 1.5em;
 }
 
 .resume__nav {
@@ -297,16 +313,6 @@ button {
 .resume__nav__portfolio a {
   padding-left: calc(var(--PADDING-SIDE-NAV) * 2);
 }
-
-.cv {
-  padding: var(--BUTTON-PADDING);
-  margin: 0 auto;
-  background-color: var(--BUTTON-COLOR);
-}
-
-.hire {
-}
-
 
 /* || FOOTER */
 .footer {
