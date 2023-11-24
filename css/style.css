@@ -74,6 +74,7 @@ textarea {
   --TIMELINE-BORDER: 3px solid papayawhip;
   --BUTTON-COLOR: rgb(128, 216, 207);
   --BUTTON-PADDING: 0.5em 1em;
+  --BUTTON-BACKGROUND-COLOR-HOVER: midnightblue;
 
   
 
@@ -254,16 +255,36 @@ button {
 }
 
 .resume__button {
+  display: block;
   padding: var(--BUTTON-PADDING);
   margin: var(--MARGIN-TB-BASE) auto;
   background-color: var(--BUTTON-COLOR);
   border-radius: 50px;
   text-align: left;
   width: fit-content;
+  box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+}
+
+.resume__button:hover,
+.resume__button:focus {
+  text-decoration: none;
+  background-color: var(--BUTTON-BACKGROUND-COLOR-HOVER);
+  color: whitesmoke;
+}
+
+.resume__button:active {
+  background-color: var(--BUTTON-BACKGROUND-COLOR-HOVER);
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 .resume__button i {
   background-color: var(--BACKGROUND-COLOR-GRADIENT1);
+  color: #000;
   margin-left: 15px;
   border-radius: 50px;
   height: 27px;
