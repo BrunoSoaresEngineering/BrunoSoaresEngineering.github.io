@@ -118,10 +118,10 @@ html {
 }
 
 body {
-  background-color: var(--BACKGROUND-COLOR-BASE);
+/*   background-color: var(--BACKGROUND-COLOR-BASE);
   background-image: linear-gradient(to bottom, var(--BACKGROUND-COLOR-GRADIENT1), var(--BACKGROUND-COLOR-GRADIENT2));
+  box-shadow: 0 0 10px var(--BORDER-COLOR-BASE); */
   color: var(--FONT-COLOR-BASE);
-  box-shadow: 0 0 10px var(--BORDER-COLOR-BASE);
   height: 100%;
   max-width: var(--SIZE-MAX-WIDTH-XL);
   margin: 0 auto;
@@ -129,7 +129,7 @@ body {
   grid-template-columns:
     [resume-photo-start] var(--SIZE-CONTAINER-WIDTH-RESUME-FOTO)
     [resume-photo-end] var(--SIZE-CELLS-INTERVAL-BASE)
-    [main-col-start] 100fr
+    [main-col-start] auto
     [main-col-end];
   grid-template-rows:
     [header-start] var(--SIZE-HEADER-HEIGHT)
