@@ -28,7 +28,7 @@ textarea {
   --BACKGROUND-COLOR-BASE: #FFF;
   --BACKGROUND-COLOR-MENU-HOVER: dimgrey;
   --BACKGROUND-COLOR-MENU-SELECTED: darkgrey;
-  --BACKGROUND-COLOR-MENU: #d5d4d0;
+  --BACKGROUND-COLOR-MENU: transparent;
   --BACKGROUND-COLOR-GRADIENT1: aliceblue;
   --BACKGROUND-COLOR-GRADIENT2: papayawhip;
   --FONT-FAMILY-BASE: "Poppins", system-ui, sans-serif;
@@ -116,9 +116,6 @@ html {
 }
 
 body {
-/*   background-color: var(--BACKGROUND-COLOR-BASE);
-  background-image: linear-gradient(to bottom, var(--BACKGROUND-COLOR-GRADIENT1), var(--BACKGROUND-COLOR-GRADIENT2));
-  box-shadow: 0 0 10px var(--BORDER-COLOR-BASE); */
   color: var(--FONT-COLOR-BASE);
   height: 100%;
   max-width: var(--SIZE-MAX-WIDTH-XL);
@@ -200,6 +197,11 @@ button {
   grid-row-end: footer-end;
 
   z-index: 1;
+
+  background-color: #DCD9D4;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+  background-blend-mode: soft-light,screen;
+  background-size: auto 100%;
 }
 
 .resume__photo {
