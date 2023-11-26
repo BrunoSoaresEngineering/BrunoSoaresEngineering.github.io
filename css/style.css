@@ -49,6 +49,7 @@ textarea {
   --SIZE-HEADER-HEIGHT: 100px;
   --SIZE-SOCIALS-HEIGHT: 20px;
   --SIZE-MAX-WIDTH-XL: 1440px;
+  --SIZE-MAX-WIDTH: var(--SIZE-MAX-WIDTH-XL);
   --HEIGHT-BODY: calc(100vh - var(--PADDING-TB-BASE) * 2);
   --PADDING-SIDE-BASE: 2.5%;
   --PADDING-SIDE-NAV: 5%;
@@ -75,7 +76,6 @@ textarea {
   --BUTTON-COLOR: rgb(128, 216, 207);
   --BUTTON-PADDING: 0.5em 1em;
   --BUTTON-BACKGROUND-COLOR-HOVER: midnightblue;
-
   
 
 
@@ -111,24 +111,51 @@ html {
   font-family: var(--FONT-FAMILY-BASE);
   font-size: var(--FONT-FAMILY-BASE);
   height: 100%;
-  background: rgb(250,240,230);
-  background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
 }
 
 body {
   color: var(--FONT-COLOR-BASE);
   height: 100%;
-  max-width: var(--SIZE-MAX-WIDTH-XL);
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns:
+    [background-start] auto
     [resume-photo-start] var(--SIZE-CONTAINER-WIDTH-RESUME-FOTO)
     [resume-photo-end] var(--SIZE-CELLS-INTERVAL-BASE)
-    [main-col-start] auto
-    [main-col-end];
+    [main-col-start] calc(min(var(--SIZE-MAX-WIDTH),100vw) - var(--SIZE-CONTAINER-WIDTH-RESUME-FOTO) - var(--SIZE-CELLS-INTERVAL-BASE))
+    [main-col-end] auto
+    [background-end];
   grid-template-rows:
     [header-start] auto
     [footer-end];
+}
+
+body::before {
+  content: "";
+  background-color: #DCD9D4;
+  background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+  background-blend-mode: soft-light,screen;
+  grid-column-start: background-start;
+  grid-column-end: resume-photo-end;
+  grid-row-start: header-start;
+
+  position: relative;
+  z-index: 0;
+
+  box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+}
+
+body::after {
+  content: "";
+  background-color: #DCD9D4;
+  background: rgb(250,240,230);
+  background-image: linear-gradient(to left, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
+  grid-column-start: resume-photo-end;
+  grid-column-end: background-end;
+  grid-row-start: header-start;
 }
 
 article {
@@ -188,20 +215,11 @@ button {
 /* || RESUME */
 .resume {
   border: none;
-
-  position: sticky;
-  top: 0;
-
   grid-column-start: resume-photo-start;
   grid-row-start: header-start;
   grid-row-end: footer-end;
-
-  z-index: 1;
-
-  background-color: #DCD9D4;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
-  background-blend-mode: soft-light,screen;
-  background-size: auto 100%;
+  position: relative;
+  z-index: 0;
 }
 
 .resume__photo {
@@ -374,6 +392,7 @@ button {
 .main_area {
   grid-column-start: resume-photo-end;
   grid-column-end: main-col-end;
+  grid-row-start: header-start;
   overflow: auto;
   overflow-x: hidden;
 }
@@ -397,12 +416,15 @@ button {
 .footer {
   color: black;
   background-color: brown;
-
+  position: relative;
+  z-index: 0;
 }
 
 /* || MAIN */
 .main {
   padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
+  position: relative;
+  z-index: 0;
 }
 
 /* || SOFTWARE ENGINEERING */
