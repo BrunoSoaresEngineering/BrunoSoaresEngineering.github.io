@@ -31,6 +31,7 @@ textarea {
   --BACKGROUND-COLOR-MENU: transparent;
   --BACKGROUND-COLOR-GRADIENT1: aliceblue;
   --BACKGROUND-COLOR-GRADIENT2: papayawhip;
+  --BACKGROUND-COLOR-FOOTER: #cdc9c3;
   --FONT-FAMILY-BASE: "Poppins", system-ui, sans-serif;
   --FONT-FAMILY-HEADINGS: "Nunito", system-ui, sans-serif;
   --FONT-SIZE-BASE: clamp(1rem, 2.2vh ,1.5rem);
@@ -416,8 +417,14 @@ button {
 
 /* || FOOTER */
 .footer {
+  background-color: var(--BACKGROUND-COLOR-FOOTER);
+  width: 100vw;
+  overflow-x: visible;
+  padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
+  box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
   color: black;
-  background-color: brown;
   position: relative;
   z-index: 0;
 }
