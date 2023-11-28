@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;800;900&display=swap');
 @import url('/fonts/fontawesome/css/all.css');
 /* || RESET */
 
@@ -33,7 +34,7 @@ textarea {
   --BACKGROUND-COLOR-GRADIENT2: papayawhip;
   --BACKGROUND-COLOR-FOOTER: #cdc9c3;
   --FONT-FAMILY-BASE: "Poppins", system-ui, sans-serif;
-  --FONT-FAMILY-HEADINGS: "Nunito", system-ui, sans-serif;
+  --FONT-FAMILY-HEADINGS: "Poppins", system-ui, sans-serif;
   --FONT-SIZE-BASE: clamp(1rem, 2.2vh ,1.5rem);
   --FONT-COLOR-BASE: #000;
   --FONT-COLOR-HEADINGS: midnightblue;
@@ -57,7 +58,7 @@ textarea {
   --PADDING-TB-BASE: 0.25em;
   --PADDING-TB-SECTION: 1em;
   --PADDING-TB-BODY: 15px;
-  --CARD-BACKGROUND-COLOR-BASE: rgb(128, 216, 207);
+  --CARD-BACKGROUND-COLOR-BASE: #b6b1a9;
   --CARD-MARGIN-TB-BASE: 2em;
   --CARD-MARGIN-LR-BASE: 2.5%;
   --CARD-MARGIN-BOTTOM-BASE: 4em;
@@ -66,17 +67,17 @@ textarea {
   --CARD-ARROW-HEIGHT: calc(var(--CARD-ARROW-WIDTH) / 2);
   --CARD-ARROW-WIDTH: calc(var(--CARD-MARGIN-LEFT-BASE) - var(--TIMELINE-MARKER-SIZE) / 2);
   --CARD-BOX-FONT-COLOR: grey;
-  --CARD-BOX-BACKGROUND-COLOR: orange;
-  --CARD-DATES-FONT-COLOR: grey;
-  --CARD-DATES-BACKGROUND-COLOR: midnightblue;
+  --CARD-BOX-BACKGROUND-COLOR: #ffc107;
+  --CARD-DATES-FONT-COLOR: #000;
+  --CARD-DATES-BACKGROUND-COLOR: ivory;
   --TIMELINE-WIDTH: 6px;
   --TIMELINE-BACKGROUND-COLOR: #000;
   --TIMELINE-MARKER-SIZE: 1.5em;
   --TIMELINE-MARKER-BACKGROUND-COLOR: #555;
   --TIMELINE-BORDER: 3px solid papayawhip;
-  --BUTTON-COLOR: rgb(128, 216, 207);
+  --BUTTON-COLOR: #ffc107;
   --BUTTON-PADDING: 0.5em 1em;
-  --BUTTON-BACKGROUND-COLOR-HOVER: midnightblue;
+  --BUTTON-BACKGROUND-COLOR-HOVER: chocolate;
   
 
 
@@ -163,6 +164,7 @@ h3 {
   letter-spacing: 0.05em;
   padding-bottom: var(--PADDING-TB-SECTION);
   color: var(--FONT-COLOR-HEADINGS);
+  font-weight: bold;
 }
 
 h1 {
@@ -174,6 +176,11 @@ h1 {
   position: absolute;
   top: calc(var(--SIZE-HEADER-HEIGHT) / 2);
   transform: translateY(-50%);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 p {
@@ -444,15 +451,40 @@ button {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1em 3em;
+  gap: 2em 3em;
 }
 
 .skills__li {
-  background-color: midnightblue;
-  color: aliceblue;
+  background-color: var(--CARD-BACKGROUND-COLOR-BASE);
+  color: var(--FONT-COLOR-BASE);
   padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
   text-align: center;
   border-radius: var(--BORDER-RADIUS-BASE);
+  box-shadow: 0 0 15px black;
+}
+
+.skills__label {
+  line-height: 2em;
+}
+
+.skills__progress {
+  border-radius: 15px;
+  
+}
+
+.skills__progress::-moz-progress-bar {
+  background-color: #ffc107;
+  border-radius: 7px;
+}
+
+.skills__progress::-webkit-progress-bar {
+  background-color: #ffc107;
+  border-radius: 7px;
+}
+
+.skills__progress::-webkit-progress-value {
+  background-color: #ffc107;
+  border-radius: 7px;
   box-shadow: 0 0 15px black;
 }
 
@@ -525,6 +557,7 @@ button {
   padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
   font-weight: 700;
   box-shadow: 0 0 10px black;
+  font-style: oblique;
 }
 
 .project__card__button {
