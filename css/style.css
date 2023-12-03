@@ -27,9 +27,9 @@ textarea {
 
 :root {
   --BACKGROUND-COLOR-BASE: #FFF;
-  --BACKGROUND-COLOR-MENU-HOVER: dimgrey;
-  --BACKGROUND-COLOR-MENU-SELECTED: darkgrey;
-  --BACKGROUND-COLOR-MENU: transparent;
+  --BACKGROUND-COLOR-NAV-HOVER: dimgrey;
+  --BACKGROUND-COLOR-NAV-SELECTED: #b6b1a9;
+  --BACKGROUND-COLOR-NAV: transparent;
   --BACKGROUND-COLOR-GRADIENT1: aliceblue;
   --BACKGROUND-COLOR-GRADIENT2: papayawhip;
   --BACKGROUND-COLOR-FOOTER: #cdc9c3;
@@ -53,6 +53,7 @@ textarea {
   --SIZE-MAX-WIDTH-XL: 1440px;
   --SIZE-MAX-WIDTH: var(--SIZE-MAX-WIDTH-XL);
   --HEIGHT-BODY: calc(100vh - var(--PADDING-TB-BASE) * 2);
+  --PADDING-TB-NAV-ITEM: 0.5em;
   --PADDING-SIDE-BASE: 2.5%;
   --PADDING-SIDE-NAV: 5%;
   --PADDING-TB-BASE: 0.25em;
@@ -99,9 +100,10 @@ textarea {
 }
 
 .menu_item_selected {
-  background-color: var(--BACKGROUND-COLOR-MENU-SELECTED);
-  position: relative;
-  z-index: 0;
+  background-color: var(--BACKGROUND-COLOR-NAV-SELECTED);
+  z-index: 2;
+  border-top-left-radius: var(--BORDER-RADIUS-BASE);
+  border-bottom-left-radius: var(--BORDER-RADIUS-BASE);
 }
 
 .align_right {
@@ -297,19 +299,22 @@ button {
 
 .resume__nav {
   padding: var(--PADDING-TB-BASE) 0;
-  background-color: var(--BACKGROUND-COLOR-MENU);
+  background-color: var(--BACKGROUND-COLOR-NAV);
   text-transform: uppercase;
   position: relative;
   z-index: 1;
+  overflow-x: hidden;  
 }
 
 .resume__nav__ul {
   letter-spacing: 0.03em;
   list-style: none;
+  position: relative;
 }
 
 .resume__nav__ul li {
   position: relative;
+  padding: var(--PADDING-TB-NAV-ITEM);
 }
 
 .resume__nav__ul li::before  {
@@ -318,12 +323,14 @@ button {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
-  left: 0;
+  height: 2em;
+  width: 150%;
   inset: 0 0 0 0;
-  background-color: var(--BACKGROUND-COLOR-MENU-HOVER);
+  background-color: var(--BACKGROUND-COLOR-NAV-HOVER);
   z-index: -1;
   transition: transform 0.1s ease;
+  transform: scaleX(0);
+  transform-origin: bottom right;
 }
 
 .resume__nav__ul li:hover::before{
@@ -331,16 +338,12 @@ button {
   transform-origin: bottom left;
 }
 
-.resume__nav__ul li::before{
-  transform: scaleX(0);
-  transform-origin: bottom right;
-}
-
 .resume__nav__ul a,
 .resume__nav__ul p {
-  line-height: 2;
   display: block;
   padding-left: var(--PADDING-SIDE-NAV);
+  align-self: center;
+  line-height: 1;
 }
 
 .resume__nav__ul a:hover,
@@ -359,30 +362,64 @@ button {
   left: 45px;
 }
 
+.resume__nav__align_right {
+float: right;
+padding-right: var(--PADDING-SIDE-NAV);
+padding-left: var(--PADDING-SIDE-NAV);
+}
+
 .resume__nav__has_submenu {
   position: relative;
   cursor: pointer;
 }
 
-.resume__nav__has_submenu:hover .resume__nav__submenu{
-  opacity: 1;
+.resume__nav__has_submenu__rotation {
+  rotate: 0deg;
+  transition: rotate 0.5s;
 }
 
-.resume__nav__submenu{
+.resume__nav__has_submenu {
+  position: relative;
+  cursor: pointer;
+  rotate: 0deg;
+}
+
+.resume__nav__submenu {
+  display: none;
   list-style: none;
-  position: absolute;
-  left: var(--SIZE-CONTAINER-WIDTH-RESUME-FOTO);
-  top: 0;
-  width: max-content;
-  min-width: 15em;
-  background-color: var(--BACKGROUND-COLOR-MENU);
-  transition: opacity 300ms;
+  position: relative;
+  width: 120%;
   opacity: 0;
-  z-index: 0;
+  z-index: 3;
+  margin-top: var(--PADDING-TB-NAV-ITEM);
+  margin-left: 25px;
+  padding-right: 0;
+  padding-left: 0;
+  border: 2px solid var(--BACKGROUND-COLOR-NAV-HOVER);
+  border-radius: var(--BORDER-RADIUS-BASE);
+  background-color: #cfcbc4;
 }
 
-.resume__nav__portfolio a {
-  padding-left: calc(var(--PADDING-SIDE-NAV) * 2);
+.resume__nav__ul .resume__nav__submenu li:first-child::before,
+.resume__nav__ul .resume__nav__submenu li:first-child  {
+  border-top-left-radius: var(--BORDER-RADIUS-BASE);
+}
+
+.resume__nav__ul .resume__nav__submenu li:last-child::before,
+.resume__nav__ul .resume__nav__submenu li:last-child  {
+  border-bottom-left-radius: var(--BORDER-RADIUS-BASE);
+}
+
+.resume__nav__submenu a {
+  padding-left: 0;
+}
+
+.resume__nav__submenu--show {
+  opacity: 1;
+  transition: opacity 1s;
+  display: block;
+  position: relative;
+  z-index: 1;
 }
 
 /* || MAIN AREA */
