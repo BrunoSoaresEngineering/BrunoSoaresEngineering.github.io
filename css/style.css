@@ -110,6 +110,11 @@ textarea {
   text-align: right;
 }
 
+.item__list {
+  padding-left: 2em;
+  
+}
+
 /* || GENERAL STYLES */
 html {
   font-family: var(--FONT-FAMILY-BASE);
@@ -266,7 +271,7 @@ button {
   text-align: left;
   width: fit-content;
   box-shadow: 0 0 10px black;
-  -webkit-box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px rgb(17, 15, 15);
   -moz-box-shadow: 0 0 10px black;
   transition: background-color 0.5s;
   transition: color 0.5s;
@@ -445,9 +450,18 @@ padding-left: var(--PADDING-SIDE-NAV);
 }
 
 /* || HEADER */
-.header {
+.header_sw {
   background-color: var(--BACKGROUND-COLOR-BASE);
   background-image: url('../img/softwareEngineering.jpg');
+  background-repeat: repeat;
+  height: var(--SIZE-HEADER-HEIGHT);
+  border-bottom: 2px solid #000;
+  position: relative;
+}
+
+.header_cloud {
+  background-color: var(--BACKGROUND-COLOR-BASE);
+  background-image: url('../img/cloud_network2.jpg');
   background-repeat: repeat;
   height: var(--SIZE-HEADER-HEIGHT);
   border-bottom: 2px solid #000;
@@ -484,20 +498,24 @@ padding-left: var(--PADDING-SIDE-NAV);
 .skills__ul {
   list-style-type: none;
   padding: var(--PADDING-TB-BASE) 0;
-  
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 2em 3em;
 }
 
 .skills__li {
+  width: 200px;
   background-color: var(--CARD-BACKGROUND-COLOR-BASE);
   color: var(--FONT-COLOR-BASE);
   padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
   text-align: center;
   border-radius: var(--BORDER-RADIUS-BASE);
   box-shadow: 0 0 15px black;
+  margin: auto;
+  align-self: stretch;
+
 }
 
 .skills__label {
@@ -566,6 +584,9 @@ padding-left: var(--PADDING-SIDE-NAV);
   position: relative;
   padding: var(--CARD-PADDING);
   border-radius: var(--BORDER-RADIUS-BASE);
+  box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
 }
 
 .project__card::before {
@@ -635,4 +656,42 @@ padding-left: var(--PADDING-SIDE-NAV);
   background-color: var(--CARD-BOX-BACKGROUND-COLOR);
   padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
   box-shadow: 0 0 10px black;
+}
+
+/* || CLOUD ENGINEERING */
+.certifications__area {
+  display: flex;
+  gap: 2em 3em;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+}
+
+.certifications__area li {
+  list-style-type: none;
+  min-width: 300px;
+  margin: auto;
+}
+
+.certifications__box {
+  display: block;
+  background-color: var(--CARD-BACKGROUND-COLOR-BASE);
+  border-radius: var(--BORDER-RADIUS-BASE);
+  padding: var(--PADDING-TB-BASE) var(--PADDING-SIDE-BASE);
+  text-align: center;
+  box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+  transition: background-color 0.5s;
+}
+
+.certifications__box:hover,
+.certifications__box:focus {
+  background-color: var(--CARD-DATES-BACKGROUND-COLOR);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.certifications__box img {
+  margin: auto;
 }
