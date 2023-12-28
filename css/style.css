@@ -195,6 +195,7 @@ p {
   letter-spacing: 0.02em;
   word-spacing: 0.1em;
   white-space: initial;
+  padding: var(--PADDING-TB-BASE);
 }
 
 a:any-link {
@@ -462,6 +463,15 @@ padding-left: var(--PADDING-SIDE-NAV);
 .header_cloud {
   background-color: var(--BACKGROUND-COLOR-BASE);
   background-image: url('../img/cloud_network2.jpg');
+  background-repeat: repeat;
+  height: var(--SIZE-HEADER-HEIGHT);
+  border-bottom: 2px solid #000;
+  position: relative;
+}
+
+.header_ps {
+  background-color: var(--BACKGROUND-COLOR-BASE);
+  background-image: url('../img/powersystem.jpg');
   background-repeat: repeat;
   height: var(--SIZE-HEADER-HEIGHT);
   border-bottom: 2px solid #000;

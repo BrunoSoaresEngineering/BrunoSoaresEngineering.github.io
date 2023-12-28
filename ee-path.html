@@ -4,17 +4,331 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Bruno Soares">
-  <meta name="description" content="Bruno Soares Portfolio">
-  <title>Bruno Soares Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Portfolio - Power System Engineering">
+  <title>Bruno Soares Power System Engineering</title>
+  <link rel="stylesheet" href="/css/style.css">
   <script src="/js/date.js" defer></script>
+  <script src="/js/submenu.js" defer></script>
 </head>
 <body>
+  <div class="resume">
+    <figure class="resume__photo center">
+      <img src="/img/Bruno_400.png" alt="Bruno Soares foto" width="150" height="150" >
+      <figcaption>Bruno Soares</figcaption>
+      <p>✅ Full-stack Software Engineer</p>
+      <p>✅ Cloud Administrator</p>
+      <p>✅ Power Systems Engineer</p>
+    </figure>
+    <section class="resume__socials center">
+      <figure>
+        <figcaption class="offscreen">Visit my LinkedIn page</figcaption>
+        <a href="https://www.linkedin.com/in/bruno-soares-engineering/" target="_blank">
+          <img class="resume__socials__img" src="/img/linkedin-83.svg" alt="Linked logo linking to Bruno Soares profile" title="Visit my LinkedIn page" width="40" height="40">
+        </a>
+      </figure>
+      <figure>
+        <figcaption class="offscreen">Visit my Github page</figcaption>
+        <a href="https://github.com/st0rm348" target="_blank">
+          <img class="resume__socials__img" src="/img/github-mark.svg" alt="GitHub logo linking to Bruno Soares profile" title="Visit my GitHub page" width="40" height="40">
+        </a>
+      </figure>
+    </section>
+      <a class="resume__button" href="maito:brunommsoares@outlook.com" class="hire">
+        Hire Me
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      </a>
+    <nav class="resume__nav">
+      <ul class="resume__nav__ul">
+        <li>
+          <a href="/"><i class="fa-solid fa-house-chimney"></i><span class="resume__nav__align_left">Home</span></a>
+        </li>
+        <li class="resume__nav__has_submenu menu_item_selected">
+          <p><i class="fa-solid fa-folder-open"></i><span class="resume__nav__align_left">Portfolio: Electrical</span><i class="fa-solid fa-chevron-down resume__nav__align_right resume__nav__has_submenu__rotation"></i></p>
+          <ul class="resume__nav__submenu">
+            <li>
+              <a href="./sw-path.html"><i class="fa-solid fa-file-code"></i><span class="resume__nav__align_left">Software</span></a>
+            </li>
+            <li>
+              <a href="./cloud-path.html"><i class="fa-solid fa-cloud"></i><span class="resume__nav__align_left">Cloud Computing</span></a>
+            </li>
+            <li class="menu_item_selected">
+              <a href="./ee-path.html"><i class="fa-solid fa-bolt"></i><span class="resume__nav__align_left">Electrical</span></a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="./resume.html"><i class="fa-solid fa-file-contract"></i><span class="resume__nav__align_left">Resume</span></a>
+        </li>
+        <li>
+          <a href="./publications.html"><i class="fa-solid fa-newspaper"></i><span class="resume__nav__align_left">Publications</span></a>
+        </li>
+        <li>
+          <a href="./about.html"><i class="fa-solid fa-address-card"></i><span class="resume__nav__align_left">About</span></a>
+        </li>
+      </ul>
+    </nav>
+    <a class="resume__button" href="./doc/BrunoSoaresOnePager.pdf" download>
+      Download CV
+      <i class="fa fa-download" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="page_right">
+    <div class="main_area">
+      <header class="header_ps">
+        <div class="hero">
+          <h1>Power Systems Engineering</h1>
+        </div>
+      </header>
 
+      <main class="main">
+        <article class="Skills">
+          <h2 class="skills__h2">Skills</h2>
+          <ul class="skills__ul">
+            <li class="skills__li">
+              <label for="pscad" class="skills__label">PSCAD</label><br>
+              <progress id="pscad" class="skills__progress" value="80" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="psse" class="skills__label">PSSE</label><br>
+              <progress id="psse" class="skills__progress" value="95" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="PowerFactory" class="skills__label">PowerFactory</label><br>
+              <progress id="PowerFactory" class="skills__progress" value="80" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="TSAT" class="skills__label">TSAT</label><br>
+              <progress id="TSAT" class="skills__progress" value="60" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="emtprv" class="skills__label">EMTP-RV</label><br>
+              <progress id="emtprv" class="skills__progress" value="40" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="Matlab-Simulink" class="skills__label">Matlab-Simulink</label><br>
+              <progress id="Matlab-Simulink" class="skills__progress" value="60" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="OPAL-RT" class="skills__label">OPAL-RT</label><br>
+              <progress id="OPAL-RT" class="skills__progress" value="70" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="IEC61850" class="skills__label">IEC 61850</label><br>
+              <progress id="IEC61850" class="skills__progress" value="80" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="IEC61869" class="skills__label">IEC 61869</label><br>
+              <progress id="IEC61869" class="skills__progress" value="80" max="100"></progress>
+            </li>
+            <li class="skills__li">
+              <label for="Power Systems Protection" class="skills__label">Power Systems Protection</label><br>
+              <progress id="Power Systems Protection" class="skills__progress" value="80" max="100"></progress>
+            </li>
+          </ul>
+        </article>
+        
+        <article class="projects">
+          <h2 class="projects__h2">Projects</h2>
+          <ul class="projects__group">
+            <li class="project">
+              <div class="project__card">
+                <div class="project__card__header">
+                  <p><time datetime="2021-10">oct 2021</time> - <time datetime="2023-05">mai 2023</time></p>
+                  <button class="project__card__button">
+                    <figure class="project__card__button__logo">
+                      <figcaption class="offscreen">Vestas logo</figcaption>
+                      <img src="./img/vestas_logo.jpg" alt="Vestas logo">
+                    </figure>
+                    <a class="project__card__button__text" href="https://www.vestas.com/">Vestas Wind Systems A/S</a>
+                </button>
+                </div>
+                <h3 class="project__h3">Power Systems Lead Engineer</h3>
+                <p><b>Functional leadership</b> in electrical simulation models development, which comprises, beyond the
+                  responsibilities of the previous Power Systems Assistant Lead Engineer role:
+                  <ul class="item__list">
+                    <li><b>Sign-off</b> product design and technical decisions</li>
+                    <li><b>Quality assurance</b> of deliverables executed by the team</li>
+                    <li><b>Continuous constructive feedback</b> to team members making them grow technically</li>
+                    <li><b>Development of product strategy</b> by considering inputs from stakeholders and technical requirements coming from power utilities and customers</li>
+                    <li><b>Project definition</b> according to product strategy and <b>monitoring</b> of project activities</li>
+                    <li><b>Coordination of activities</b> within the Team and interfacing teams, like Technical Sales and Consulting teams</li>
+                    <li>Promotion of <b>knowledge sharing</b> within and outside Vestas (by, for example, contributing to technical papers, conferences, and standardization working groups)</li>
+                    <li>Support on grid studies for various site projects (amongst others):
+                      <ul class="item__list">
+                        <li><a href="https://goldenplainswindfarm.com.au/">Golden Plains - AU</a></li>
+                        <li><a href="https://kennedyenergypark.com.au/">Kennedy Energy Park (KEP) - AU</a></li>
+                        <li><a href="https://www.tiltrenewables.com/assets-and-projects/Rye-Park-Wind-Farm/">Rye Park - AU</a></li>
+                        <li><a href="https://www.tiltrenewables.com/assets-and-projects/Dundonnell-Wind-Farm/">Dundonnell - AU</a></li>
+                        <li><a href="https://www.lallalwindfarms.com.au/">Lal Lal Wind Farms (Elaine + Yendon) - AU</a></li>
+                        <li><a href="https://www.edf-re.com/project/las-majadas/">Las Majadas - US</a></li>
+                        <li><a href="https://renewablesnow.com/news/dynamic-green-ammonia-demo-in-denmark-to-go-live-in-early-2024-820769/">Ramme green amonia plant - DK</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </p>
+                <p>Bruno was a Functional Leader of the Team. He was key to <b>defining and prioritizing</b> the tasks to be executed
+                  within the projects in which the team was involved. He was responsible to guarantee quality and sign-off
+                  deliverables produced by his team, which was located both in Portugal and Denmark.</p>
+                <p>Since Vestas Wind Systems A/S has been intensively recruiting, Bruno had a key role in <b>
+                  selecting, driving thetraining, and ramping up </b> the team members.</p>
+                <p>Bruno has <b>led a technical Business Support process</b> with successful results.</p>
+                <figure class="project__technologies">
+                  <figcaption><strong>Software:</strong></figcaption>
+                  <ul class="project__technologies__ul">
+                    <li>PSCAD</li>
+                    <li>PSS/E</li>
+                    <li>PowerFactory</li>
+                    <li>TSAT</li>
+                    <li>EMTP-RV</li>
+                    <li>Matlab-Simulink</li>
+                    <li>C++</li>
+                    <li>Fortran</li>
+                    <li>Jira</li>
+                  </ul>
+                </figure>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__card">
+                <div class="project__card__header">
+                  <p><time datetime="2019-06">jun 2019</time> - <time datetime="2021-09">set 2021</time></p>
+                  <button class="project__card__button">
+                    <figure class="project__card__button__logo">
+                      <figcaption class="offscreen">Vestas logo</figcaption>
+                      <img src="./img/vestas_logo.jpg" alt="Vestas logo">
+                    </figure>
+                    <a class="project__card__button__text" href="https://www.vestas.com/">Vestas Wind Systems A/S</a>
+                </button>
+                </div>
+                <h3 class="project__h3">Power Systems Assistant Lead Engineer</h3>
+                <p>Beyond the responsibilities of the previous Power Systems Engineer role, Bruno was responsible for assisting the
+                  technical leadership on electrical simulation models development. Focus changed from a developer role to a
+                  supporter on <b>driving the product and people development</b> within the Team.
+                </p>
+                <figure class="project__technologies">
+                  <figcaption><strong>Software:</strong></figcaption>
+                  <ul class="project__technologies__ul">
+                    <li>PSCAD</li>
+                    <li>PSS/E</li>
+                    <li>PowerFactory</li>
+                    <li>TSAT</li>
+                    <li>EMTP-RV</li>
+                    <li>Matlab-Simulink</li>
+                    <li>C++</li>
+                    <li>Fortran</li>
+                    <li>Jira</li>
+                  </ul>
+                </figure>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__card">
+                <div class="project__card__header">
+                  <p><time datetime="2018-06">jun 2018</time> - <time datetime="2019-05">mai 2019</time></p>
+                  <button class="project__card__button">
+                    <figure class="project__card__button__logo">
+                      <figcaption class="offscreen">Vestas logo</figcaption>
+                      <img src="./img/vestas_logo.jpg" alt="Vestas logo">
+                    </figure>
+                    <a class="project__card__button__text" href="https://www.vestas.com/">Vestas Wind Systems A/S</a>
+                </button>
+                </div>
+                <h3 class="project__h3">Power Systems Engineer</h3>
+                <p>Development of <b>models for power system simulations</b> targeting different <b>simulation programs</b> (PSSE,
+                  PowerFactory, Matlab-Simulink, PSCAD...), according to Grid Codes and customer requirements. This task
+                  requires interacting with other teams internally, for example, Sales Business Units, in order to meet stakeholders'
+                  expectations. </p>
+                <p>Advanced usage of programming skills on <b>Fortran, C, C++, Python and Git repositories</b> for code management.
+                  Application of Scrum (software development) and Kanban (technical support) methodologies.</p>
+                <p><b>Power system simulation analysis</b>, providing support both to Grid Interconnection and Sales teams. </p>
+                <p><b>Coordination of activities</b> within the Grid Model and Analysis Team and participation in scoping activities for
+                  future tasks in line with Vestas projects.
+                </p>
+                <figure class="project__technologies">
+                  <figcaption><strong>Software:</strong></figcaption>
+                  <ul class="project__technologies__ul">
+                    <li>PSCAD</li>
+                    <li>PSS/E</li>
+                    <li>PowerFactory</li>
+                    <li>TSAT</li>
+                    <li>EMTP-RV</li>
+                    <li>Matlab-Simulink</li>
+                    <li>C++</li>
+                    <li>Fortran</li>
+                    <li>Jira</li>
+                  </ul>
+                </figure>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__card">
+                <div class="project__card__header">
+                  <p><time datetime="2015-08">aug 2015</time> - <time datetime="2018-06">jun 2018</time></p>
+                  <button class="project__card__button">
+                    <figure class="project__card__button__logo">
+                      <figcaption class="offscreen">R&D Nester logo</figcaption>
+                      <img src="./img/rdnester.jpg" alt="RD Nester logo">
+                    </figure>
+                    <a class="project__card__button__text" href="https://www.rdnester.com/en-GB">R&D Nester</a>
+                </button>
+                </div>
+                <h3 class="project__h3">Power System Researcher</h3>
+                <p>Power Systems Researcher with focus on <b>Protection, Automation and Control (PAC)</b> systems, and
+                  corresponding communication protocols (IEC 61850, IEC 61869, IEC 60870-5-104, IEEE 1588, etc.) used in the
+                  context of Power Systems digitalization.</p>
+                <p>Bruno worked in Real-Time Power System Laboratory of R&D Nester performing several tasks like power system
+                  <b>simulation in real-time and in closed-loop with physical equipment</b>.
+                </p>
+                <figure class="project__technologies">
+                  <figcaption><strong>Software:</strong></figcaption>
+                  <ul class="project__technologies__ul">
+                    <li>OPAL-RT</li>
+                    <li>Riverbed Modeler</li>
+                    <li>Annue 500</li>
+                    <li>Omicron</li>
+                    <li>IxNetwork</li>
+                    <li>Linux</li>
+                    <li>Helinks</li>
+                  </ul>
+                </figure>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__card">
+                <div class="project__card__header">
+                  <p><time datetime="2013-08">aug 2013</time> - <time datetime="2015-01">jan 2015</time></p>
+                  <button class="project__card__button">
+                    <figure class="project__card__button__logo">
+                      <figcaption class="offscreen">FEUP logo</figcaption>
+                      <img src="./img/feup.jpg" alt="FEUP logo">
+                    </figure>
+                    <a class="project__card__button__text" href="https://sigarra.up.pt/feup/en/WEB_PAGE.INICIAL">Faculty of Engineering of the University of Porto</a>
+                </button>
+                </div>
+                <h3 class="project__h3">Teaching Assistant</h3>
+                <p>Teaching Assistant in lecture LSDI (Laboratório de Sistemas Digitais, <b>Digital Systems Laboratory</b>), of the
+                  Integrated Master in Electrical and Computers Engineering. The function was about helping students, in the
+                  laboratory, both in practical and theoretical doubts that they have and helping Professors whenever they need (in
+                  students evaluation, student's work correction, substitution classes, exams surveillance, etc.).
+                </p>
+                <figure class="project__technologies">
+                  <figcaption><strong>Software:</strong></figcaption>
+                  <ul class="project__technologies__ul">
+                    <li>Verilog</li>
+                    <li>MARS MIPS Simulator</li>
+                  </ul>
+                </figure>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </main>
+      <footer class="footer">
+        <p>
+          Bruno Soares &copy; <time id="date"></time> All Rights Reserved.
+        </p>
+      </footer>
+    </div>
+  </div>
 </body>
-<footer class="footer">
-  <p>
-    Bruno Soares &copy; <time id="date"></time> All Rights Reserved.
-  </p>
-</footer>
 </html>
