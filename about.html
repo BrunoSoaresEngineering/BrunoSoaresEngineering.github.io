@@ -4,17 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Bruno Soares">
-  <meta name="description" content="Bruno Soares Portfolio">
-  <title>Bruno Soares Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Bruno Soares Engineering">
+  <title>Bruno Soares Engineering</title>
+  <link rel="stylesheet" href="/css/style.css">
   <script src="/js/date.js" defer></script>
+  <script src="/js/submenu.js" defer></script>
 </head>
 <body>
-
+  <div class="resume">
+    <figure class="resume__photo center">
+      <img src="/img/Bruno_400.png" alt="Bruno Soares foto" width="150" height="150" >
+      <figcaption>Bruno Soares</figcaption>
+      <p>✅ Full-stack Software Engineer</p>
+      <p>✅ Cloud Administrator</p>
+      <p>✅ Power Systems Engineer</p>
+    </figure>
+    <section class="resume__socials center">
+      <figure>
+        <figcaption class="offscreen">Visit my LinkedIn page</figcaption>
+        <a href="https://www.linkedin.com/in/bruno-soares-engineering/" target="_blank">
+          <img class="resume__socials__img" src="/img/linkedin-83.svg" alt="Linked logo linking to Bruno Soares profile" title="Visit my LinkedIn page" width="40" height="40">
+        </a>
+      </figure>
+      <figure>
+        <figcaption class="offscreen">Visit my Github page</figcaption>
+        <a href="https://github.com/st0rm348" target="_blank">
+          <img class="resume__socials__img" src="/img/github-mark.svg" alt="GitHub logo linking to Bruno Soares profile" title="Visit my GitHub page" width="40" height="40">
+        </a>
+      </figure>
+    </section>
+      <a class="resume__button" href="maito:brunommsoares@outlook.com" class="hire">
+        Hire Me
+        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+      </a>
+    <nav class="resume__nav">
+      <ul class="resume__nav__ul">
+        <li>
+          <a href="/"><i class="fa-solid fa-house-chimney"></i><span class="resume__nav__align_left">Home</span></a>
+        </li>
+        <li class="resume__nav__has_submenu">
+          <p><i class="fa-solid fa-folder-open"></i><span class="resume__nav__align_left">Portfolio</span><i class="fa-solid fa-chevron-down resume__nav__align_right resume__nav__has_submenu__rotation"></i></p>
+          <ul class="resume__nav__submenu">
+            <li>
+              <a href="./sw-path.html"><i class="fa-solid fa-file-code"></i><span class="resume__nav__align_left">Software</span></a>
+            </li>
+            <li>
+              <a href="./cloud-path.html"><i class="fa-solid fa-cloud"></i><span class="resume__nav__align_left">Cloud Computing</span></a>
+            </li>
+            <li>
+              <a href="./ee-path.html"><i class="fa-solid fa-bolt"></i><span class="resume__nav__align_left">Electrical</span></a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="./resume.html"><i class="fa-solid fa-file-contract"></i><span class="resume__nav__align_left">Resume</span></a>
+        </li>
+        <li>
+          <a href="./publications.html"><i class="fa-solid fa-newspaper"></i><span class="resume__nav__align_left">Publications</span></a>
+        </li>
+        <li class="menu_item_selected">
+          <a href="./about.html"><i class="fa-solid fa-address-card"></i><span class="resume__nav__align_left">About</span></a>
+        </li>
+      </ul>
+    </nav>
+    <a class="resume__button" href="./doc/BrunoSoaresOnePager.pdf" download>
+      Download CV
+      <i class="fa fa-download" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="page_right">
+    <div class="main_area">
+      <main>
+        Work in progress, available soon.
+      </main>
+      <footer class="footer">
+        <p>
+          Bruno Soares &copy; <time id="date"></time> All Rights Reserved.
+        </p>
+      </footer>
+    </div>
+  </div>
 </body>
-<footer class="footer">
-  <p>
-    Bruno Soares &copy; <time id="date"></time> All Rights Reserved.
-  </p>
-</footer>
 </html>
