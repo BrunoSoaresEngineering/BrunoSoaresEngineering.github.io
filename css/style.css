@@ -705,3 +705,10 @@ padding-left: var(--PADDING-SIDE-NAV);
 .certifications__box img {
   margin: auto;
 }
+
+/* || RESUME */
+.main__resume {
+  display: grid;
+  grid-template-columns: 50fr 50fr;
+  column-gap: 2em;
+}
