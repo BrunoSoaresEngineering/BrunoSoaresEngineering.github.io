@@ -99,6 +99,10 @@ textarea {
   left: -1000000px;
 }
 
+.nobelowmargin {
+  margin-bottom: 0;
+}
+
 .menu_item_selected {
   background-color: var(--BACKGROUND-COLOR-NAV-SELECTED);
   z-index: 2;
@@ -194,7 +198,7 @@ p {
   letter-spacing: 0.02em;
   word-spacing: 0.1em;
   white-space: initial;
-  padding: var(--PADDING-TB-BASE);
+  margin-bottom: var(--MARGIN-TB-BASE);
 }
 
 a:any-link {
@@ -737,6 +741,6 @@ padding-left: var(--PADDING-SIDE-NAV);
   -moz-box-shadow: 0 0 10px black;
 }
 
-.skills__list {
-  /* list-style: ; */
+.skills__list li {
+  margin-bottom: var(--MARGIN-TB-BASE);
 }
