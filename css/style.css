@@ -112,7 +112,6 @@ textarea {
 
 .item__list {
   padding-left: 2em;
-  
 }
 
 /* || GENERAL STYLES */
@@ -595,7 +594,6 @@ padding-left: var(--PADDING-SIDE-NAV);
 }
 
 .project__card {
-  width: 100%;
   background-color: var(--CARD-BACKGROUND-COLOR-BASE);
   margin-left: var(--CARD-MARGIN-LEFT-BASE);
   margin-bottom: var(--CARD-MARGIN-BOTTOM-BASE);
@@ -719,4 +717,26 @@ padding-left: var(--PADDING-SIDE-NAV);
   display: grid;
   grid-template-columns: 50fr 50fr;
   column-gap: 2em;
+}
+
+.skills__groups {
+  list-style-type: none;
+  padding: var(--PADDING-TB-SECTION) var(--PADDING-SIDE-BASE);
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: var(--CARD-MARGIN-BOTTOM-BASE);
+}
+
+.skills__group {
+  background-color: var(--CARD-BACKGROUND-COLOR-BASE);
+  padding: var(--CARD-PADDING);
+  border-radius: var(--BORDER-RADIUS-BASE);
+  box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  -moz-box-shadow: 0 0 10px black;
+}
+
+.skills__list {
+  /* list-style: ; */
 }
