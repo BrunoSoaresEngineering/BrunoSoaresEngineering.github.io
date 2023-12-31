@@ -199,11 +199,11 @@ p {
   word-spacing: 0.1em;
   white-space: initial;
   margin-bottom: var(--MARGIN-TB-BASE);
+  text-align: justify;
 }
 
 a:any-link {
   color: var(--LINK-COLOR-BASE);
-  text-decoration: none;
 }
 
 a:hover,
