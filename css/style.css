@@ -90,6 +90,10 @@ textarea {
   text-align: center;
 }
 
+.center_figure {
+  margin: 0 auto;
+}
+
 .nowrap {
   white-space: nowrap;
 }
