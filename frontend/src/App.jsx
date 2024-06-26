@@ -1,5 +1,5 @@
 import Navbar from './components/navbar/Navbar';
-import Header from './containers/Header/Header';
+import Header from './containers/header/Header';
 
 import './App.scss';
 
