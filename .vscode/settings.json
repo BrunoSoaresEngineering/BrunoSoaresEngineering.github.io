@@ -2,6 +2,7 @@
   "conventionalCommits.scopes": [
     "backend",
     "app",
-    "navbar"
+    "navbar",
+    "hero"
   ]
 }
