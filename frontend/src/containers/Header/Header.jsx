@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { HiScale } from 'react-icons/hi';
 
 import images from '../../constants/images';
 
