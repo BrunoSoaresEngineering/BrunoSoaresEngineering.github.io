@@ -13,6 +13,7 @@ const About = () => {
 
     const fetchAbouts = async () => {
       const data = await client.fetch(query);
+      data.sort((a, b) => a.order - b.order);
       setAbouts(data);
     };
 
