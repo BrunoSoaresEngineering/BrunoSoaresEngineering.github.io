@@ -1,5 +1,6 @@
 import Navbar from './components/navbar/Navbar';
 import Header from './containers/header/Header';
+import About from './containers/about/About';
 
 import './App.scss';
 
@@ -8,10 +9,7 @@ const App = () => {
     <h1 className='app'>
       <Navbar />
       <Header />
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
+      <About />
     </h1>
   )
 }
