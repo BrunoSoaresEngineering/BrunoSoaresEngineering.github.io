@@ -21,5 +21,10 @@ export default {
         hotspot: true
       }
     },
+    {
+      name: 'order',
+      title: 'Order',
+      type: 'number'
+    }
   ]
 };
