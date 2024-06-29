@@ -4,6 +4,14 @@
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
+
+  .app__wrapper {
+    padding: 0;
+
+    .copyright {
+      display: none;
+    }
+  }
 }
 
 .app__header {
@@ -22,8 +30,8 @@
     flex-direction: row;
   }
 
-  @media screen and (min-width: 1201px) {
-    padding: 8rem;
+  @media screen and (min-width: 2000px) {
+    padding-top: 8rem;
   }
 }
 
@@ -80,6 +88,7 @@
 }
 
 .app__header-circles { 
+  flex: 0.75;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

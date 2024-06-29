@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 
 import images from '../../constants/images';
+import { AppWrap } from '../../wrapper';
 
 import './Header.scss';
 
@@ -13,17 +14,17 @@ const scaleVariants = {
       ease: 'easeInOut'
     }
   }
-}
+};
 
 const mainTechnologiesImages = [
   images.node,
   images.javascript,
   images.react
-]
+];
 
-const Header = () => {
+const Header = () => { 
   return (
-    <div id="home" className="app__header app__flex">
+    <div className="app__header app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{duration: 0.5}}
@@ -71,5 +72,8 @@ const Header = () => {
       </motion.div>
     </div>
   )
-}
-export default Header
+};
+
+const HeaderWrapped = AppWrap(Header, 'home');
+
+export default HeaderWrapped;
