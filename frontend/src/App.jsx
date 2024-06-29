@@ -1,4 +1,4 @@
-import Navbar from './components/navbar/Navbar';
+import { Navbar } from './components';
 import Header from './containers/header/Header';
 import About from './containers/about/About';
 
