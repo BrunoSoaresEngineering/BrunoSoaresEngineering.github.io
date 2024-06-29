@@ -4,6 +4,7 @@
     "app",
     "navbar",
     "hero",
-    "about"
+    "about",
+    "app-wrap"
   ]
 }
