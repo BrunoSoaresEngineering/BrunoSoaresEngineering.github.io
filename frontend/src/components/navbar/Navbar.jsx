@@ -3,17 +3,10 @@ import { HiX } from 'react-icons/hi';
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from 'framer-motion';
 
+import { menuItems } from '../../menu';
 import logo from '../../assets/logo-white.png';
 
 import './Navbar.scss';
-
-const menuItems = [
-  'home',
-  'about',
-  'work',
-  'skills',
-  'contact'
-]
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
