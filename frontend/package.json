@@ -12,6 +12,7 @@
   "dependencies": {
     "@sanity/client": "^6.20.1",
     "@sanity/image-url": "^1.0.2",
+    "eslint-config-airbnb-base": "^15.0.0",
     "framer-motion": "^11.2.12",
     "node-sass": "^9.0.0",
     "react": "^18.3.1",
