@@ -14,6 +14,12 @@ export default {
       type: 'string'
     },
     {
+      name: 'level',
+      title: 'Level',
+      type: 'number',
+      validation: rule => rule.min(1).max(5)
+    },
+    {
       name: 'icon',
       title: 'Icon',
       type: 'image',
