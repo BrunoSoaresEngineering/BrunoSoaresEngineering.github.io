@@ -10,7 +10,7 @@ const Work = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [workItems, setWorkItems] = useState([]);
   const [workItemsFiltered, setWorkItemsFiltered] = useState([]);
-  const [animateCard, setAnimateCard] = useState({ y:0, opacity: 1});
+  const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [categories, setCategories] = useState(['All']);
 
   useEffect(() => {
@@ -24,22 +24,19 @@ const Work = () => {
           availableCategories.add(tag);
         });
       });
-      
+
       setCategories(Array.from(availableCategories));
       setWorkItems(works);
       setWorkItemsFiltered(works);
       setActiveFilter('All');
-    }
+    };
 
     fetchWork();
-  }, [])
-  
-
-  //const categories = ['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'];
+  }, []);
 
   const handleWorkFilter = (category) => {
     setActiveFilter(category);
-    setAnimateCard({ y: 100, opacity: 0});
+    setAnimateCard({ y: 100, opacity: 0 });
 
     setTimeout(() => {
       setAnimateCard({ y: 0, opacity: 1 });
@@ -50,8 +47,8 @@ const Work = () => {
         setWorkItemsFiltered(workItems.filter((workItem) => workItem.tags.includes(category)));
       }
     }, 500);
-  }
-  
+  };
+
   return (
     <>
       <h2 className="head-text">My Work <span>Portfolio</span></h2>
@@ -94,8 +91,8 @@ const Work = () => {
 
       </motion.div>
     </>
-  )
-}
+  );
+};
 
 const WorkWrapped = AppWrap(Work, 'work');
 
