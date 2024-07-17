@@ -8,7 +8,7 @@ export default {
       title: 'Date',
       type: 'date',
       options: {
-        dateFormat: 'MM-YYYY'
+        dateFormat: 'YYYY-MM'
       }
     },
     {
