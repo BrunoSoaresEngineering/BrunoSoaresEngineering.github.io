@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { format as formatDate, compareAsc } from 'date-fns';
+import { Tooltip } from 'react-tooltip';
 
 import { AppWrap } from '../../wrapper';
 import { client, urlFor } from '../../lib/client';
@@ -7,13 +9,19 @@ import CircleAnimation from '../../components/Circle-animation.jsx';
 
 import './Skills.scss';
 
+const processExperienceDate = (experienceData) => {
+  const experience = { ...experienceData };
+  experience.formattedDate = formatDate(new Date(experienceData.date), 'yyyy-MM');
+  return experience;
+};
+
 const Skills = () => {
   const [skills, setSkills] = useState([]);
   const [experiences, setExperiences] = useState([]);
 
   const fetchSkills = async () => {
     const skillsQuery = '*[_type == "skills"]';
-    const experiencesQuery = '*[_type == "experiences"]';
+    const experiencesQuery = '*[_type == "experience"]';
 
     const skillsData = await client.fetch(skillsQuery);
     skillsData.sort((a, b) => {
@@ -25,7 +33,8 @@ const Skills = () => {
     setSkills(skillsData);
 
     const experiencesData = await client.fetch(experiencesQuery);
-    setExperiences(experiencesData);
+    experiencesData.sort((a, b) => compareAsc(a.date, b.date));
+    setExperiences(experiencesData.map(processExperienceDate));
   };
 
   useEffect(() => {
@@ -58,6 +67,41 @@ const Skills = () => {
             </motion.div>
           ))}
         </motion.div>
+        <div className="app__skills-exp">
+          {experiences.map((experience) => (
+            <motion.div
+              className='app__skills-exp-item'
+              key={`app__experience${experience.date}`}
+            >
+              <div className="app__skills-exp-year">
+                <p className="bold-text">{experience.formattedDate}</p>
+              </div>
+              <motion.div className='app__skills-exp-works'>
+                {experience.works.map((work) => (
+                  <>
+                    <a id={work.name}>
+                      <motion.div
+                        key={`app__skills-exp-year-${work.name}`}
+                        className='app__skills-exp-work'
+                      >
+                        <h4 className='bold-text'>{work.name}</h4>
+                        <p className="p-text">{work.company}</p>
+                      </motion.div>
+                    </a>
+                    <Tooltip
+                      id={work.name}
+                      effect='solid'
+                      arrowColor='#fff'
+                      className="skills-tooltip"
+                      content={work.desc}
+                    >
+                    </Tooltip>
+                  </>
+                ))}
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </>
   );
