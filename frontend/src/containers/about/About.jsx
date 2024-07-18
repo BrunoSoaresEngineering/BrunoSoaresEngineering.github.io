@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { client, urlFor } from '../../lib/client';
 
 import './About.scss';
@@ -19,12 +19,13 @@ const About = () => {
     };
 
     fetchAbouts();
-  }, [])
+  }, []);
 
   return (
     <>
       <h2 className='head-text'>
-        Let's <span>collaborate</span> to create something truly <span>exceptional</span> together!
+        Let&apos;s <span>collaborate</span> to create something truly <span>exceptional</span>
+        &nbsp;together!
       </h2>
 
       <div className='app__profiles'>
@@ -43,9 +44,9 @@ const About = () => {
         ))}
       </div>
     </>
-  )
-}
+  );
+};
 
-const AboutWrapped = AppWrap(About, 'about');
+const AboutWrapped = AppWrap(MotionWrap(About, 'app__about'), 'about', 'app__whitebg');
 
 export default AboutWrapped;
