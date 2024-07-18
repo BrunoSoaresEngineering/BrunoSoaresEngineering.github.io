@@ -22,12 +22,11 @@ const mainTechnologiesImages = [
   images.react
 ];
 
-const Header = () => { 
-  return (
+const Header = () => (
     <div className="app__header app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-        transition={{duration: 0.5}}
+        transition={{ duration: 0.5 }}
         className='app__header-info'
       >
         <div className='app__header-badge'>
@@ -45,7 +44,7 @@ const Header = () => {
       </motion.div>
 
       <motion.div
-        whileInView={{ scale: [0, 1]}}
+        whileInView={{ scale: [0, 1] }}
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className='app__header-img'
       >
@@ -71,8 +70,7 @@ const Header = () => {
         ))}
       </motion.div>
     </div>
-  )
-};
+);
 
 const HeaderWrapped = AppWrap(Header, 'home');
 
