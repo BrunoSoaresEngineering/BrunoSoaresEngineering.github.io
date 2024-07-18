@@ -1,6 +1,5 @@
 import { SocialMedia, NavigationDots } from '../components';
 
-
 const AppWrap = (Component, idName, classNames) => function HOC() {
   return (
     <div id={idName} className={`app__container ${classNames}`}>
@@ -15,6 +14,7 @@ const AppWrap = (Component, idName, classNames) => function HOC() {
       </div>
       <NavigationDots active={idName} />
     </div>
-  )
-}
-export default AppWrap
+  );
+};
+
+export default AppWrap;
