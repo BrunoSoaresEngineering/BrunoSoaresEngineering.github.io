@@ -78,10 +78,9 @@ const Skills = () => {
               </div>
               <motion.div className='app__skills-exp-works'>
                 {experience.works.map((work) => (
-                  <>
+                  <div key={`app__skills-exp-year-${work._key}`}>
                     <a id={work.name}>
                       <motion.div
-                        key={`app__skills-exp-year-${work.name}`}
                         className='app__skills-exp-work'
                       >
                         <h4 className='bold-text'>{work.name}</h4>
@@ -96,7 +95,7 @@ const Skills = () => {
                       content={work.desc}
                     >
                     </Tooltip>
-                  </>
+                  </div>
                 ))}
               </motion.div>
             </motion.div>
