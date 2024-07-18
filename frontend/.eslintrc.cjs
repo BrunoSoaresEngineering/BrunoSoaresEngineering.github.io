@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'comma-dangle': ['error', 'never'],
+    'no-underscore-dangle': 'off',
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [
       'warn',
