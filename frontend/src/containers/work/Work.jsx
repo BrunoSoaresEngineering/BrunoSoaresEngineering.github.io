@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { client, urlFor } from '../../lib/client';
 
 import './Work.scss';
@@ -94,6 +94,6 @@ const Work = () => {
   );
 };
 
-const WorkWrapped = AppWrap(Work, 'work');
+const WorkWrapped = AppWrap(MotionWrap(Work, 'app__work'), 'work', 'app__primarybg');
 
 export default WorkWrapped;
