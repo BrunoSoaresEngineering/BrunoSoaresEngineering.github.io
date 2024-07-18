@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { format as formatDate, compareAsc } from 'date-fns';
 import { Tooltip } from 'react-tooltip';
 
-import { AppWrap } from '../../wrapper';
+import { AppWrap, MotionWrap } from '../../wrapper';
 import { client, urlFor } from '../../lib/client';
 import CircleAnimation from '../../components/Circle-animation.jsx';
 
@@ -107,6 +107,6 @@ const Skills = () => {
   );
 };
 
-const SkillsWrapped = AppWrap(Skills, 'skills');
+const SkillsWrapped = AppWrap(MotionWrap(Skills, 'app__skills'), 'skills', 'app__whitebg');
 
 export default SkillsWrapped;
