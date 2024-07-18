@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HiX } from 'react-icons/hi';
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from 'react-icons/rx';
 import { motion } from 'framer-motion';
 
 import { menuItems } from '../../menu';
@@ -10,13 +10,13 @@ import './Navbar.scss';
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  
+
   return (
     <nav className='app__navbar'>
       <div className='app__navbar-logo'>
         <img src={logo} alt="logo" />
       </div>
-      
+
       <ul className='app__navbar-links'>
         {menuItems.map((item) => (
           <li className='app__flex p-text' key={`navbar-links-${item}`}>
@@ -28,17 +28,17 @@ const Navbar = () => {
 
       <div className='app__navbar-menu'>
         <RxHamburgerMenu onClick={() => setToggle(true)} />
-        
+
         {toggle && (
           <motion.div
-            whileInView={{ x: [300, 0]}}
+            whileInView={{ x: [300, 0] }}
             transition={{
               duration: 0.85,
               ease: 'easeOut'
             }}
           >
             <HiX onClick={() => setToggle(false)} />
-            
+
             <ul>
               {menuItems.map((item) => (
                 <li key={`navbar-menu-${item}`} onClick={() => setToggle(false)}>
@@ -52,7 +52,7 @@ const Navbar = () => {
         )}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
