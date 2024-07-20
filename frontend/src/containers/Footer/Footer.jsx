@@ -25,12 +25,12 @@ const Footer = () => {
     <>
       <h2 className="head-text">Take a coffe and <span>chat</span> with me!</h2>
       <div className="app__footer-cards">
-        <a href='mailto:brunommsoares313@outlook.com' className="app__footer-card bold-text">
+        <a href='mailto:brunommsoares@outlook.com' className="app__footer-card bold-text">
           <div className='app__footer-icons'>
             <SiMinutemailer />
           </div>
           <p className="bold-text">
-            brunommsoares313@outlook.com
+            brunommsoares@outlook.com
           </p>
         </a>
         <a href={`${cvFileURL}`} className="app__footer-card bold-text">
