@@ -3,14 +3,6 @@
   font-family: var(--font-base);
 }
 
-.app__whitebg {
-  background-color: var(--base-bg-color);
-}
-
-.app__primarybg {
-  background-color: var(--primary-color);
-}
-
 .app__container {
   width: 100%;
   min-height: 100vh;
@@ -36,6 +28,26 @@
   }
 }
 
+.app__whitebg {
+  background-color: var(--base-bg-color);
+
+  .app__social {
+    div {
+      background-color: var(--primary-color);
+    }
+  }
+}
+
+.app__primarybg {
+  background-color: var(--primary-color);
+
+  .app__social {
+    div {
+      background-color: var(--base-bg-color);
+    }
+  }
+}
+
 .app__social {
   display: flex;
   flex-direction: column;
@@ -50,7 +62,6 @@
     border-radius: 50%;
     margin: 0.25rem 0;
 
-    background-color: var(--white-color);
     border: 1px solid var(--lightgray-color);
 
     display: flex;
@@ -70,7 +81,7 @@
       border-color: var(--secondary-color);
 
       svg {
-        color: var(--white-color);
+        color: var(--base-bg-color);
       }
     }
   }
@@ -151,7 +162,7 @@
 .bold-text {
   font-weight: 800;
   font-size: 0.9rem;
-  color: var(--black-color);
+  color: var(--base-font-color);
   text-align: left;
 
   @media screen and (min-width: 480px) {

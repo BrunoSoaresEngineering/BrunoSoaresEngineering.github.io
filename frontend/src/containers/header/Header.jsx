@@ -72,6 +72,6 @@ const Header = () => (
     </div>
 );
 
-const HeaderWrapped = AppWrap(Header, 'home');
+const HeaderWrapped = AppWrap(Header, 'home', 'app__primarybg');
 
 export default HeaderWrapped;
