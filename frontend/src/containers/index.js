@@ -1,10 +1,12 @@
-import About from './about/About';
-import Header from './header/Header';
-import Skills from './skills/Skills';
-import Work from './work/Work';
+import About from './about/About.jsx';
+import Footer from './Footer/Footer.jsx';
+import Header from './header/Header.jsx';
+import Skills from './skills/Skills.jsx';
+import Work from './work/Work.jsx';
 
 export {
   About,
+  Footer,
   Header,
   Skills,
   Work
