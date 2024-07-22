@@ -22,7 +22,7 @@
   width: 100%;
   flex-direction: column;
 
-  padding: 4rem 1rem 2rem;
+  padding: 4rem 0.5rem 2rem;
   @media screen and (min-width: 481px) {
     padding: 4rem 2rem;
   }
@@ -54,12 +54,11 @@
   justify-content: flex-end;
   align-items: center;
 
-  padding: 1rem;
-  padding-left: 2rem;
+  padding: 1rem 0.25rem;
 
   div {
-    width: 37px;
-    height: 37px;
+    width: 27px;
+    height: 27px;
     border-radius: 50%;
     margin: 0.25rem 0;
 
@@ -72,8 +71,8 @@
     transition: all 0.3s ease-in-out;
 
     svg {
-      width: 25px;
-      height: 25px;
+      width: 19px;
+      height: 19px;
       color: var(--gray-color);
     }
 
@@ -83,6 +82,16 @@
 
       svg {
         color: var(--base-bg-color);
+      }
+    }
+
+    @media screen and (min-width: 481px) {
+      width: 37px;
+      height: 37px;
+  
+      svg {
+        width: 25px;
+        height: 25px;
       }
     }
 
@@ -98,6 +107,11 @@
       }
     }
   }
+
+  @media screen and (min-width: 481px) {
+    padding: 1rem;
+    padding-left: 2rem;
+  }
 }
 
 .app__navigation {
@@ -106,7 +120,7 @@
   justify-content: center;
   align-items: center;
 
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 
 
   .app__navigation-dot {
@@ -131,6 +145,10 @@
 
   .active {
     background-color: cornflowerblue;
+  }
+
+  @media screen and (min-width: 481px) {
+    padding: 1rem;
   }
 }
 
@@ -161,14 +179,22 @@
 }
 
 .head-text {
-  font-size: 2.75rem;
+  font-size: 1.8rem;
   font-weight: 800;
   text-align: center;
-  color: var(--black-color);
+  color: var(--base-font-color);
   text-transform: capitalize;
 
   span {
     color: var(--secondary-color);
+  }
+
+  @media screen and (min-width: 2000px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (min-width: 481px) {
+    font-size: 2.75rem;
   }
 }
 
