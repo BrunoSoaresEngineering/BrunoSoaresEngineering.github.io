@@ -23,8 +23,8 @@
 }
 
 .app__skills-item {
+  flex: 0;
   flex-direction: column;
-  text-align: center;
 
   margin: 1rem;
 
@@ -62,11 +62,17 @@
       width: 70px;
       height: 70px;
     }
+
+    @media screen and (min-width: 2000px) {
+      width: 150px;
+      height: 150px;
+    }
   }
 
   p {
     font-weight: 500;
     margin-top: 0.5rem;
+    text-align: center;
   }
 }
 
