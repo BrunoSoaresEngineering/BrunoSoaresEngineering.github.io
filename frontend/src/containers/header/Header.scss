@@ -22,12 +22,9 @@
 
   padding: 6rem 1rem 2rem;
 
-  @media screen and (min-width: 481px) {
-    padding: 6rem 2rem 0rem;
-  }
-
   @media screen and (min-width: 769px) {
     flex-direction: row;
+    padding: 6rem 2rem 0rem;
   }
 
   @media screen and (min-width: 2000px) {
