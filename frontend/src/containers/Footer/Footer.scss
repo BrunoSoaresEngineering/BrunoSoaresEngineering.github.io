@@ -19,7 +19,7 @@
     align-items: center;
 
     margin: 1rem 0;
-    padding: 1rem;
+    padding: 1rem 0.3rem;
     border-radius: 10px;
 
     background-color: var(--secondary-color-20pc);
@@ -40,7 +40,7 @@
       align-items: center;
       justify-content: center;
 
-      margin: 0 1rem;
+      margin: 0 0.3rem;
 
       svg {
         width: 80%;
@@ -55,6 +55,12 @@
     @media screen and (min-width: 481px) {
       width: 100%;
       min-width: 300px;
+
+      padding: 1rem;
+
+      .app__footer-icons {
+        margin: 0 1rem;
+      }
     }
   }
 }
