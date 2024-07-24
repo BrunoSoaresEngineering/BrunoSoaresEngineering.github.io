@@ -24,8 +24,8 @@ const About = () => {
   return (
     <>
       <h2 className='head-text'>
-        Let&apos;s <span>collaborate</span> to create something truly <span>exceptional</span>
-        &nbsp;together!
+        Let&apos;s <span>collaborate</span> to create something
+        truly <span>exceptional</span> &nbsp;together!
       </h2>
 
       <div className='app__profiles'>
