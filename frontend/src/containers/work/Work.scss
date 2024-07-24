@@ -1,7 +1,7 @@
 .app__work-filter {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
@@ -61,7 +61,7 @@
     }
 
     @media screen and (min-width: 481px) {
-      width: 350px;
+      width: 270px;
       margin: 2rem;
     }
 
@@ -99,8 +99,9 @@
   position: relative;
 
   h4 {
-    margin-top: 1rem;
+    margin: 1rem 0;
     line-height: 1.5;
+    text-align: center;
 
     @media screen and (min-width: 2000px) {
       margin-top: 3rem;
