@@ -41,7 +41,11 @@
   height: 100%;
   width: 100%;
 
-  margin: 0 0 0 2rem;
+  margin: 0;
+
+  @media screen and (min-width: 481px) {
+    margin: 0 0 0 2rem;
+  }
 
   @media screen and (min-width: 1201px) {
     width: auto;
@@ -58,7 +62,7 @@
 
   .badge-cmp,
   .tag-cmp {
-    padding: 1rem 2rem;
+    padding: 1rem;
     background: var(--base-bg-color);
     border-radius: 15px;
     flex-direction: row;
@@ -75,6 +79,13 @@
       text-transform: uppercase;
       text-align: right;
       text-wrap: nowrap;
+    }
+  }
+
+  @media screen and (min-width: 481px) {
+    .badge-cmp,
+    .tag-cmp {
+      padding: 1rem 2rem;
     }
   }
 
