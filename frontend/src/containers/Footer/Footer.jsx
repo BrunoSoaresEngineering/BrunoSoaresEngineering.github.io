@@ -43,7 +43,7 @@ const Footer = () => {
         </a>
       </div>
     </>
-  )
+  );
 };
 
 const FooterWrapped = AppWrap(MotionWrap(Footer, 'app__footer'), 'contact', 'app__whitebg');
