@@ -50,10 +50,17 @@ export default {
       of: [{ type: 'block' }]
     },
     {
-      name: 'usedSkill',
-      title: 'Used Skill',
-      type: 'reference',
-      to: [{ type: 'skills' }]
+      name: 'usedSkills',
+      title: 'Used Skills',
+      type: 'array',
+      of:[
+        {
+          name: 'usedSkill',
+          title: 'Used Skill',
+          type: 'reference',
+          to: [{ type: 'skills' }]
+        }
+      ]
     }
   ]
 };
