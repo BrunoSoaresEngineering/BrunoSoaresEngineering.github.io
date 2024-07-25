@@ -18,6 +18,19 @@ export default {
       title: 'Description',
       type: 'array',
       of: [{ type: 'block' }]
+    },
+    {
+      name: 'projects',
+      title: 'Projects',
+      type: 'array',
+      of: [
+        {
+          name: 'project',
+          title: 'Project',
+          type: 'reference',
+          to: [{ type: 'works'}]
+        }
+      ]
     }
   ]
 };
