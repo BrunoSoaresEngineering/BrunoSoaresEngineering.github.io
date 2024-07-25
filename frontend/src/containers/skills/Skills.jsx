@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { format as formatDate, compareAsc } from 'date-fns';
+import { format as formatDate, compareDesc } from 'date-fns';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client, urlFor } from '../../lib/client';
@@ -20,7 +20,7 @@ const Skills = () => {
 
   const fetchSkills = async () => {
     const skillsQuery = '*[_type == "skills"]';
-    const experiencesQuery = '*[_type == "experience"]';
+    const experiencesQuery = '*[_type == "experience"]{..., works[]->}';
 
     const skillsData = await client.fetch(skillsQuery);
     skillsData.sort((a, b) => {
@@ -32,7 +32,7 @@ const Skills = () => {
     setSkills(skillsData);
 
     const experiencesData = await client.fetch(experiencesQuery);
-    experiencesData.sort((a, b) => compareAsc(a.date, b.date));
+    experiencesData.sort((a, b) => compareDesc(a.date, b.date));
     setExperiences(experiencesData.map(processExperienceDate));
   };
 
