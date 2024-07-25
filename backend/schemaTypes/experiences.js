@@ -15,7 +15,14 @@ export default {
       name: 'works',
       title: 'Works',
       type: 'array',
-      of:[{ type: 'workExperience'}]
+      of:[
+        {
+          name: 'work',
+          title: 'Work',
+          type: 'reference',
+          to: [{ type: 'workExperience'}]
+        }
+      ]
     }
   ]
 };
