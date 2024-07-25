@@ -1,0 +1,14 @@
+{
+  "conventionalCommits.scopes": [
+    "backend",
+    "app",
+    "navbar",
+    "hero",
+    "about",
+    "app-wrap",
+    "work",
+    "skills",
+    "motion-wrap",
+    "contact"
+  ]
+}
