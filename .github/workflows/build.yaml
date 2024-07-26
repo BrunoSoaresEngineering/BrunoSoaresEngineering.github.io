@@ -27,6 +27,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -35,11 +38,10 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
       - name: Install dependencies
-        working-directory: ./frontend
         run: npm ci
       - name: Build
-        working-directory: ./frontend
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v4
