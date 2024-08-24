@@ -26,6 +26,12 @@ export default {
       options: {
         hotspot: true
       }
+    },
+    {
+      name: 'skillGroup',
+      title: 'Skill Group',
+      type: 'reference',
+      to: [{ type: 'skillGroups' }]
     }
   ]
 };
