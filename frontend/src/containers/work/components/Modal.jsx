@@ -24,6 +24,20 @@ function Modal({
               value={workItem?.detailedDescription}
             />
           </div>
+          <div className="app__modal-skills">
+            {workItem?.usedSkills.map((usedSkill) => (
+              <div
+                key={`used-skill-${usedSkill.name}`}
+                className="app__modal-skill"
+                style={{ backgroundColor: usedSkill.bgColor }}
+              >
+                <img
+                  src={urlFor(usedSkill.icon)}
+                  alt={usedSkill.name}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </ModalBase>
     </>

@@ -39,6 +39,33 @@
 .app__modal-description {
   padding-top: 1.5rem;
   text-align: justify;
+}
 
+.app__modal-skills {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__modal-skill {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 70%;
+  }
+
+  &:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
 }
 

@@ -24,7 +24,7 @@ const Work = () => {
 
   useEffect(() => {
     const fetchWork = async () => {
-      const query = '*[_type == "works"]';
+      const query = '*[_type == "works"]{..., usedSkills[]->}';
       const works = await client.fetch(query);
       const availableCategories = new Set(['All']);
 
