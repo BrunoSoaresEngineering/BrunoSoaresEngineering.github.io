@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client, urlFor } from '../../lib/client';
+import Modal from './components/Modal.jsx';
 
 import './Work.scss';
 
@@ -12,6 +13,10 @@ const Work = () => {
   const [workItemsFiltered, setWorkItemsFiltered] = useState([]);
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [categories, setCategories] = useState(['All']);
+  const [isModalOpen, setIsModalOpen] = useState(true);
+
+  const closeModal = () => setIsModalOpen(false);
+  const openModal = () => setIsModalOpen(true);
 
   useEffect(() => {
     const fetchWork = async () => {
@@ -51,6 +56,8 @@ const Work = () => {
 
   return (
     <>
+      <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
+
       <h2 className="head-text">My Work <span>Portfolio</span></h2>
 
       <div className="app__work-filter">
@@ -74,7 +81,11 @@ const Work = () => {
         className='app__work-portfolio'
       >
         {workItemsFiltered.map((workItem, index) => (
-          <div className="app__work-item app__flex" key={`work-item-${index}`}>
+          <div
+            className="app__work-item app__flex"
+            key={`work-item-${index}`}
+            onClick={openModal}
+          >
             <div className="app__work-img app__flex">
               <img src={urlFor(workItem.imgUrl)} alt={workItem.name} />
             </div>
