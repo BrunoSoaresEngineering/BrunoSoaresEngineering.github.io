@@ -13,10 +13,14 @@ const Work = () => {
   const [workItemsFiltered, setWorkItemsFiltered] = useState([]);
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [categories, setCategories] = useState(['All']);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentWorkItem, setCurrentWorkItem] = useState();
 
   const closeModal = () => setIsModalOpen(false);
-  const openModal = () => setIsModalOpen(true);
+  const openModal = (workItem) => {
+    setCurrentWorkItem(workItem);
+    setIsModalOpen(true);
+  };
 
   useEffect(() => {
     const fetchWork = async () => {
@@ -56,7 +60,7 @@ const Work = () => {
 
   return (
     <>
-      <Modal isModalOpen={isModalOpen} closeModal={closeModal} />
+      <Modal isModalOpen={isModalOpen} closeModal={closeModal} workItem={currentWorkItem} />
 
       <h2 className="head-text">My Work <span>Portfolio</span></h2>
 
@@ -84,7 +88,7 @@ const Work = () => {
           <div
             className="app__work-item app__flex"
             key={`work-item-${index}`}
-            onClick={openModal}
+            onClick={() => openModal(workItem)}
           >
             <div className="app__work-img app__flex">
               <img src={urlFor(workItem.imgUrl)} alt={workItem.name} />

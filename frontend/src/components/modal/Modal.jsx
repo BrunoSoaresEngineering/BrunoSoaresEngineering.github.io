@@ -11,7 +11,7 @@ function Modal({ children, isModelOpen, closeModal }) {
   return (
     <div className="app__modal-backdrop" onClick={closeModal}>
       {isModelOpen && <DisableScroll />}
-      <div className='app__modal' onClick={(e) => e.stopPropagation()}>
+      <div className='app__modal-container' onClick={(e) => e.stopPropagation()}>
         <button onClick={closeModal}>
           &times;
         </button>

@@ -1,0 +1,44 @@
+.app__modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 1.5rem;
+  overflow-y: scroll;
+
+  h4 {
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+}
+
+.app__modal-img {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    object-fit: contain;
+  }
+
+  p {
+    position: absolute;
+    bottom: 0;
+
+    background-color: var(--base-bg-color);
+    padding: 0.5rem 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+.app__modal-description {
+  padding-top: 1.5rem;
+  text-align: justify;
+
+}
+
