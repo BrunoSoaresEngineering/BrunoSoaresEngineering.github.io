@@ -67,5 +67,10 @@
   &:hover {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   }
+
+  .app__modal-skill-tooltip {
+    font-size: 0.8rem;
+    background-color: var(--secondary-color);
+  }
 }
 

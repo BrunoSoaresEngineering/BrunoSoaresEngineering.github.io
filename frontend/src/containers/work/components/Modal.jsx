@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
-import {PortableText} from '@portabletext/react';
+import { PortableText } from '@portabletext/react';
+import { Tooltip } from 'react-tooltip';
 import ModalBase from '../../../components/modal/Modal.jsx';
-import { urlFor } from '../../../lib/client.js';
+import { urlFor } from '../../../lib/client';
 
 import './Modal.scss';
 
@@ -30,11 +31,15 @@ function Modal({
                 key={`used-skill-${usedSkill.name}`}
                 className="app__modal-skill"
                 style={{ backgroundColor: usedSkill.bgColor }}
+                data-tooltip-id={usedSkill.name}
               >
                 <img
                   src={urlFor(usedSkill.icon)}
                   alt={usedSkill.name}
                 />
+                <Tooltip id={usedSkill.name} className='app__modal-skill-tooltip'>
+                  {usedSkill.name}
+                </Tooltip>
               </div>
             ))}
           </div>
