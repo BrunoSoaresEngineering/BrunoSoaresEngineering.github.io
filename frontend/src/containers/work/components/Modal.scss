@@ -75,6 +75,16 @@
 .app__modal-description {
   padding-top: 1.5rem;
   text-align: justify;
+
+  ul {
+    list-style-position: inside;
+    padding-inline-start: 1rem;
+  }
+
+  p {
+    padding-top: 0.8rem;
+  }
+  
 }
 
 .app__modal-skills {
@@ -84,6 +94,14 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 640px) {
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    gap: 3rem;
+  }
 }
 
 .app__modal-skill {
@@ -95,6 +113,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (min-width: 640px) {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  
+  @media screen and (min-width: 1024px) {
+    width: 5rem;
+    height: 5rem;
+  }
 
   img {
     height: 70%;
