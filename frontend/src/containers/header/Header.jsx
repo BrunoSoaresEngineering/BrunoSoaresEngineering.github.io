@@ -18,7 +18,7 @@ const scaleVariants = {
 
 const mainTechnologiesImages = [
   images.node,
-  images.javascript,
+  images.typescript,
   images.react
 ];
 
